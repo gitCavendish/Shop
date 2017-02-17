@@ -23,9 +23,6 @@ class Order < ApplicationRecord
   end
 
 
-
-
-
   include AASM
 
   aasm do
