@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
     else
         flash[:warning] = "购物车内已存在该商品"
     end
-    
+
     redirect_to :back
 
   end
