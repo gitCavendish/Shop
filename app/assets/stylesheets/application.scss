@@ -17,3 +17,147 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+.navbar-default {
+    background-color: #212121;//背景颜色
+    border-color: #212121;//边框色
+    margin-bottom: 0;//底部 margin 不撑开距离
+}
+
+@media (min-width: 768px) {
+    .navbar {
+        border-radius: 0;//圆角为0
+    }
+}
+
+.header-wrap {
+    color: #fff;
+    background: #4c394e;
+    position: relative;
+    z-index: 10;
+}
+
+@media all and (min-width: 668px) {
+    .primary-wrap .brand-wrap {
+        width:20%
+    }
+}
+
+.primary-wrap {
+    padding: 1.5rem;
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.primary-wrap .brand-wrap {
+    padding-right: 2rem
+}
+
+.primary-wrap .brand-wrap h1 {
+    margin: 0;
+    padding: 0
+}
+
+.primary-wrap .brand-link {
+    display: block;
+    width: 15.4rem;
+    max-width: 100%
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1370px) {
+    .primary-wrap .brand-link {
+        width:13.5rem
+    }
+}
+
+.primary-wrap .brand-link img {
+    width: 100%
+}
+
+.primary-wrap .search-wrap {
+    width: 80%;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.primary-wrap .search-wrap form {
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1
+}
+
+.primary-wrap .search-wrap .header-search-el-wrap {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative
+}
+
+.primary-wrap .search-wrap .header-search-el-wrap:before {
+    position: absolute;
+    left: 1.5rem;
+    top: 1.2rem;
+    color: #999
+}
+
+.primary-wrap .search-wrap .header-search-el-wrap .text-input {
+    display: block;
+    line-height: 4.4rem;
+    height: 4.4rem;
+    padding: 0 0 0 3.5rem;
+    border: 0;
+    margin: 0;
+    color: #333;
+    line-height: normal;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    padding-left: 1rem;
+    display: inline-block
+}
+
+// search button
+
+.primary-wrap .search-wrap .header-search-btn {
+    display: block;
+    line-height: 4.4rem;
+    height: 4.4rem;
+    padding: 0 1.7rem;
+    border: 0;
+    margin: 0;
+    background: #10bbd5;
+    display: inline-block;
+    margin: 0 10px;
+    min-width: 140px;
+    border-radius: .6rem;
+    transition: background .3s
+}
+
+.primary-wrap .search-wrap .advanced-search {
+    display: block;
+    line-height: 4.4rem;
+    height: 4.4rem;
+    padding: 0 1.7rem;
+    border: 0;
+    margin: 0;
+    padding: 0 1.5rem;
+    display: inline-block;
+    border: 1px solid rgba(255,255,255,0.7);
+    color: rgba(255,255,255,0.7);
+    transition: all .3s
+}
+
+// footer
+.footer-wrap {
+    background: #403042;
+    color: white;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 1.4rem;
+}

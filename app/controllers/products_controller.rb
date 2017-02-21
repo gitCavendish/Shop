@@ -1,26 +1,32 @@
 class ProductsController < ApplicationController
-
-  def index
-    @products = Product.all
-  end
-
-  def show
-    @product = Product.find(params[:id])
-  end
-
-  def add_to_cart
-    @product = Product.find(params[:id])
-
-    if !current_cart.products.include?(@product)
-        current_cart.add_product_to_cart(@product)
-        flash[:notice] = "#{@product.title}成功加入购物车"
-    else
-        flash[:warning] = "购物车内已存在该商品"
+    def index
+        @products = Product.all
     end
 
-    redirect_to :back
+    def show
+        @product = Product.find(params[:id])
+    end
 
-  end
+    def add_to_cart
+        @product = Product.find(params[:id])
 
+        if !current_cart.products.include?(@product)
+            current_cart.add_product_to_cart(@product)
+            flash[:notice] = "#{@product.title}成功加入购物车"
+        else
+            flash[:warning] = '购物车内已存在该商品'
+        end
 
+        redirect_to :back
+    end
+
+    def search
+        @products = Product.ransack(title_or_description_cont: @q).result(distinct: true)
+    end
+
+    protected
+
+    def validates_search_key
+        @q = params[:query_string].gsub(/\\|\'|\/|\?/, '') if params[:query_string].present?
+    end
 end
