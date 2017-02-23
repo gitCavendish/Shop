@@ -1,3 +1,120 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.clearfix {
+	display: block;
+}
+
+.header-wrap {
+    color: #fff;
+    background: #4c394e;
+    position: relative;
+    z-index: 10
+}
+
+.header-wrap a {
+    color: #fff;
+    text-decoration: none
+}
+
+.header-wrap a:hover,.header-wrap a:active,.header-wrap a:visited {
+    color: #fff
+}
+
+.primary-wrap {
+    padding: 1.5rem;
+    -js-display: flex;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.container-fluid,.secondary-header,.user-nav,.header-wrap .header,.content-wrap,.footer-wrap .footer {
+    max-width: 1440px
+}
+
+.primary-wrap .brand-link {
+    display: block;
+    width: 15.4rem;
+    max-width: 100%
+}
+
+.primary-wrap .search-wrap {
+    width: 80%;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.primary-wrap .search-wrap form {
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1
+}
+
+@media all and (max-width: 1023px) {
+    .primary-wrap .search-wrap .header-search-btn {
+        display:block;
+        line-height: 3.5rem;
+        height: 3.5rem;
+        padding: 0 1.2rem;
+        border: 0;
+        margin: 0;
+        min-width: 0;
+        position: absolute;
+        right: .5rem;
+        top: .5rem;
+        bottom: .5rem
+    }
+
+    .primary-wrap .search-wrap .header-search-btn:before {
+        float: none;
+        content: "🔍"
+    }
+
+    .primary-wrap .search-wrap .header-search-btn i:before {
+        margin-right: 1rem;
+        font-size: 1.4em;
+        line-height: 0;
+        position: relative;
+        top: 0.22em
+    }
+
+    .primary-wrap .search-wrap .header-search-btn .text {
+        display: none
+    }
+
+    .primary-wrap .search-wrap .header-search-el-wrap {
+        margin-right: 1rem
+    }
+
+    .primary-wrap .search-wrap .header-search-el-wrap:before {
+        display: none
+    }
+
+    .primary-wrap .search-wrap .header-search-el-wrap .text-input {
+        padding-left: 1rem;
+        padding-right: 5rem
+    }
+}
+
+@media all and (max-width: 667px) {
+    .primary-wrap .search-wrap {
+        -webkit-flex-grow:2;
+        -ms-flex-positive: 2;
+        flex-grow: 2;
+        min-width: 100%
+    }
+
+    .primary-wrap .search-wrap .advanced-search {
+        display: none
+    }
+
+    .primary-wrap .search-wrap .header-search-el-wrap {
+        margin-right: 0
+    }
+}

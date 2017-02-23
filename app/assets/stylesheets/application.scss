@@ -18,14 +18,27 @@
 @import "bootstrap";
 @import "font-awesome";
 
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 .navbar-default {
     background-color: #212121;//背景颜色
     border-color: #212121;//边框色
     margin-bottom: 0;//底部 margin 不撑开距离
 }
 
+.col-center-block {  
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media (min-width: 768px) {
-    .navbar {
+    .navbar, .flashes {
         border-radius: 0;//圆角为0
     }
 }
@@ -44,7 +57,7 @@
 }
 
 .primary-wrap {
-    padding: 1.5rem;
+    padding: 1.2rem;
     -js-display: flex;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -160,4 +173,81 @@
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     font-size: 1.4rem;
+}
+
+//secondary-header
+.container-fluid:before,.secondary-header:before,.user-nav:before,.header-wrap .header:before,.content-wrap:before,.footer-wrap .footer:before,.container-fluid:after,.secondary-header:after,.user-nav:after,.header-wrap .header:after,.content-wrap:after,.footer-wrap .footer:after {
+    content: " ";
+    display: table
+}
+
+.secondary-header-wrap {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    background: #fff
+}
+
+.secondary-header {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.secondary-header .page-links {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    color: #333
+}
+.secondary-header .page-links a {
+    color: #333;
+    text-decoration: none
+}
+
+.secondary-header .page-links a:hover,.secondary-header .page-links a:active,.secondary-header .page-links a:visited {
+    color: #333
+}
+
+.secondary-header .page-links li {
+    padding: 0;
+    margin: 0
+}
+
+.secondary-header .page-links a {
+    display: block;
+    line-height: 4rem;
+    height: 4rem;
+    padding: 0 1.7rem;
+    border: 0;
+    margin: 0;
+    position: relative;
+    border-bottom: 2px solid;
+    border-color: transparent;
+    transition: border-color .3s
+}
+
+.secondary-header .page-links a i:before {
+    margin-right: 1rem;
+    font-size: 1.4em;
+    line-height: 0;
+    position: relative;
+    top: 0.22em
+}
+
+.secondary-header .page-links a:hover {
+    border-color: #333
+}
+
+.secondary-header .page-links li:last-child a:after {
+    display: none
+}
+
+.elem {
+  border: solid  #ecf0f1 3px;
+  position: relative;
 }
