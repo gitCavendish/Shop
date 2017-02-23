@@ -30,6 +30,13 @@
     margin-bottom: 0;//底部 margin 不撑开距离
 }
 
+.col-center-block {  
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 @media (min-width: 768px) {
     .navbar, .flashes {
         border-radius: 0;//圆角为0
