@@ -1,27 +1,90 @@
-<div class="row">
+<style>
+#limitpic {
+
+  width: 97.1px;
+
+}
+
+</style>
+
+
+<div class="container" style="padding-top: 20px">
   <div class="col-md-6">
-    <% if @product.image.present? %>
-      <%= image_tag(@product.image.medium.url, class: "thumbnail") %>
+
+    <% if @product.photos.present? %>
+      <% @photos.each_with_index do |p, index| %>
+        <% if index == 0 %>
+          <%= image_tag p.avatar.medium.url %>
+        <br><br>
+            <div style="margin-left: -40px" >
+              <ul >
+        <% else %>
+          <span ><%= image_tag p.avatar.thumb.url, id: "limitpic" %></span>
+        <% end %>
+      <% end %>
+    </ul>
+            </div>
     <% else %>
-      <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
+        <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
     <% end %>
   </div>
+
+
   <div class="col-md-6">
-    <h2> <%= @product.title %> </h2>
+    <div style="height:80px">
+    <h2 > <%= @product.title %> </h2>
+  </div>
     <div style="height:100px;">
-      <p>
+      <p style="color: grey">
         <%= @product.description %>
       </p>
     </div>
-    <div> 数量 : <%= @product.quantity %> </div>
-    <div class="product-price"> ￥ <%= @product.price %> </div>
-    <div class="pull-right">
+    <div style="height: 50px">
+      <h5>
+    数量 : <%= @product.quantity %>
+      <h5>
+  </div>
+
+    <div style="height: 50px">
+      <h4>￥:<%= @product.price %></h4>
+    </div>
+
+    <div class="pull-right" style="margin-top: 5px">
       <% if @product.quantity.present? && @product.quantity > 0 %>
           <%= link_to("加入购物车", add_to_cart_product_path(@product), :method =>:post, :class => "btn btn-primary btn-lg btn-danger") %>
       <% else %>
           已售罄
       <% end %>
-      
+
     </div>
+
   </div>
+</div>
+<hr>
+<div class="container-fluid" style="margin-top: 50px">
+<h3 class="text-center"> 商品详情 </h3>
+
+</div>
+
+<div class="container" style="padding-bottom: 50px">
+  <ul class="nav nav-tabs">
+    <li class="active"><a href="#">详细信息</a></li>
+    <li><a href="#">商品评价</a></li>
+    <li><a href="#">规格信息</a></li>
+    <li><a href="#">售后条款</a></li>
+  </ul>
+  <br>
+  <p><strong>Note:</strong> This example shows how to create a basic navigation tab. It is not toggleable/dynamic yet (you can't click on the links to display different content)- see the last example in the Bootstrap Tabs and Pills Tutorial to find out how this can be done.</p>
+</div>
+
+
+<div class="container" style="padding-left: 170px">
+  <% if @product.photos.present? %>
+      <% @photos.each_with_index do |p, index| %>
+          <%= image_tag p.avatar.url, resize_to_fit:[400,600], class: "thumbnail" %>
+          <br >
+          <br>
+      <% end %>
+
+    <% end %>
 </div>
