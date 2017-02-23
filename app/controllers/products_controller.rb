@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :validate_search_key, only: [:search]
     def index
         @products = Product.all
     end
@@ -26,7 +27,7 @@ class ProductsController < ApplicationController
 
     protected
 
-    def validates_search_key
-        @q = params[:query_string].gsub(/\\|\'|\/|\?/, '') if params[:query_string].present?
+    def validate_search_key
+      @q = params[:query_string].gsub(/\|\'|\/|\?/, "") if params[:query_string].present?
     end
 end

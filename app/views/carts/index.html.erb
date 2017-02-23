@@ -6,8 +6,8 @@
                 data: {confirm: "你确定要清空整个购物车吗？"})%>
 
     <h2> 购物车 </h2>
-
-    <table class="table table-bordered">
+<div class="table-responsive">
+    <table class="table center">
       <thead>
         <tr>
           <th colspan="2">商品资讯</th>
@@ -19,7 +19,7 @@
       <tbody>
 
         <% current_cart.cart_items.each do |cart_item| %>
-          <tr>
+          <tr class="warning">
             <td>
               <%= link_to product_path(cart_item.product) do %>
                 <% if cart_item.product.image.present? %>
@@ -53,6 +53,7 @@
 
       </tbody>
     </table>
+  </div>
 
     <br>
 
