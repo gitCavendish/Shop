@@ -21,11 +21,9 @@ class CartItemsController < ApplicationController
     else
       flash[:warning] = "超过库存数量"
     end
-    
+
     redirect_to carts_path
   end
-
-
 
   private
   def cart_item_params
