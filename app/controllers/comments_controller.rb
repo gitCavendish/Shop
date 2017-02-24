@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 
     @comment = Comment.new(comment_params)
     @comment.user = current_user
-    @comment.product = Product.find_by(params[:id])
+    @comment.product = Product.find(params[:product_id])
 
 
     if @comment.save

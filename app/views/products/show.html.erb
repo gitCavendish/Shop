@@ -110,11 +110,11 @@
       <br><br>
       <strong>所有评价</strong>
       <br><br>
-      <% @product.comments.each do |comment| %>
+      <% @product.comments.each do |comments| %>
         <div class="well">
-          <p><strong><%= comment.user.email%> :</strong></p>
+          <p><strong><%= comments.user.email%> :</strong></p>
 
-          <p> <%= comment.content %></p>
+          <p> <%= comments.content %></p>
         </div>
       <% end %>
 
