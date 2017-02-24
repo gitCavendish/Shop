@@ -13,6 +13,7 @@ Rails.application.routes.draw do
             get :search
         end
         resources :comments 
+
     end
 
     resources :carts do

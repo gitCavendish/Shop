@@ -7,6 +7,17 @@
 
 </style>
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Case</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
 
 <div class="container" style="padding-top: 20px">
   <div class="col-md-6">
@@ -61,30 +72,89 @@
   </div>
 </div>
 <hr>
-<div class="container-fluid" style="margin-top: 50px">
-<h3 class="text-center"> 商品详情 </h3>
+
+
+
+
+
 
 </div>
 
-<div class="container" style="padding-bottom: 50px">
-  <ul class="nav nav-tabs">
-    <li class="active"><a href="#">详细信息</a></li>
-    <li><a href="#">商品评价</a></li>
-    <li><a href="#">规格信息</a></li>
-    <li><a href="#">售后条款</a></li>
-  </ul>
+</div>
+
+</body>
+
+
+
+
+<div class="container">
+  <h2>More Information</h2>
   <br>
-  <p><strong>Note:</strong> This example shows how to create a basic navigation tab. It is not toggleable/dynamic yet (you can't click on the links to display different content)- see the last example in the Bootstrap Tabs and Pills Tutorial to find out how this can be done.</p>
-</div>
+  <ul class="nav nav-tabs">
+    <li class="active"><a data-toggle="tab" href="#Details">商品详情</a></li>
+    <li><a data-toggle="tab" href="#Comments">商品评论</a></li>
+    <li><a data-toggle="tab" href="#Standards">规格信息</a></li>
+    <li><a data-toggle="tab" href="#Saleterms">售后条款</a></li>
+  </ul>
 
+  <div class="tab-content">
 
-<div class="container" style="padding-left: 170px">
-  <% if @product.photos.present? %>
-      <% @photos.each_with_index do |p, index| %>
-          <%= image_tag p.avatar.url, resize_to_fit:[400,600], class: "thumbnail" %>
-          <br >
+    <div id="Details" class="tab-pane fade in active">
+      <h3 class="text-center">商品详情</h3>
+      <div class="container tab-pane fade in active" style="padding-left: 170px" >
+        <% if @product.photos.present? %>
+            <% @photos.each_with_index do |p, index| %>
+                <%= image_tag p.avatar.url, resize_to_fit:[400,600], class: "thumbnail" %>
+                <br >
+                <br>
+            <% end %>
+          <% end %>
+      </div>
+
+    </div>
+    <div id="Comments" class="tab-pane fade">
+      <strong>所有评价</strong>
+      <% @product.comments.each do |comment| %>
+        <div class="well">
+          <p><strong><%= comment.user.email%> :</strong></p>
           <br>
+          <p> <%= comment.content %></p>
+        </div>
       <% end %>
 
-    <% end %>
+
+
+
+
+
+
+
+      <hr>
+
+      <h4>写下您的评论：</h4>
+
+      <%= form_for([@product, @product.comments.build]) do |f| %>
+
+          <p>
+            <%= f.label :content %>
+            <%= f.text_area :content %>
+            <%= f.submit "提交"%>
+          </p>
+      <% end %>
+
+
+
+
+
+    </div>
+    <div id="Standards" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
+    <div id="Saleterms" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+  </div>
 </div>
+</html>
