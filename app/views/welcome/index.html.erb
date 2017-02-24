@@ -79,130 +79,42 @@ body {
 
   <h4>---某一食物分类---</h4>
   <hr>
-
+<% @products.each do |product| %>
     <div class="food-item col-sm-4 col-md-3">
-                <div class="item-img">
-                    <a href="/" >
-                        <img  alt="Hidden Figures" src="http://placehold.it/200x200&text=No Pic">
-                    </a>
-                </div>
-
-                <div class="item-info">
-                    <h3 class="title">
-                        <%= link_to("商品名称", products_path(@product))%>
-                    </h3>
-
-                    <p class="information">
-                        <a href="/" >Margot Lee Shetterly</a>
-                    </p>
-
-                    <p>显示商品类别</p>
-                    <p class="format">Carbohydrate level</p>
-
-                    <div >
-                        <p class="price-wrap"> 显示商品价格 </p>
-                    </div>
-                </div>
-
-                <div class="btn-wrap">
-                      <a href="/" class="btn btn-sm btn-info " >
-                        <span class="textwhite">Add to basket</span>
-                      </a>
-                </div>
+      <%= link_to product_path(product) do %>
+      <div class="item-img">
+        <% if product.photos.present? %>
+          <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+        <% else %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+        <% end %>
       </div>
 
-      <div class="food-item col-sm-4 col-md-3">
-                  <div class="item-img">
-                      <a href="/" >
-                          <img  alt="Hidden Figures" src="http://placehold.it/200x200&text=No Pic">
-                      </a>
-                  </div>
+      <div class="item-info">
+          <h3 class="title">
+              <%= product.title%>
+          </h3>
 
-                  <div class="item-info">
-                      <h3 class="title">
-                          <%= link_to("商品名称", products_path(@product))%>
-                      </h3>
+          <p class="information">
+              <a href="/" >Margot Lee Shetterly</a>
+          </p>
 
-                      <p class="information">
-                          <a href="/" >Margot Lee Shetterly</a>
-                      </p>
+          <p>显示商品类别</p>
+          <p class="format">Carbohydrate level</p>
 
-                      <p>显示商品类别</p>
-                      <p class="format">Carbohydrate level</p>
-
-                      <div >
-                          <p class="price-wrap"> 显示商品价格 </p>
-                      </div>
-                  </div>
-
-                  <div class="btn-wrap">
-                        <a href="/" class="btn btn-sm btn-info " >
-                          <span class="textwhite">Add to basket</span>
-                        </a>
-                  </div>
-        </div>
-
-        <div class="food-item col-sm-4 col-md-3">
-                    <div class="item-img">
-                        <a href="/" >
-                            <img  alt="Hidden Figures" src="http://placehold.it/200x200&text=No Pic">
-                        </a>
-                    </div>
-
-                    <div class="item-info">
-                        <h3 class="title">
-                            <%= link_to("商品名称", products_path(@product))%>
-                        </h3>
-
-                        <p class="information">
-                            <a href="/" >Margot Lee Shetterly</a>
-                        </p>
-
-                        <p>显示商品类别</p>
-                        <p class="format">Carbohydrate level</p>
-
-                        <div >
-                            <p class="price-wrap"> 显示商品价格 </p>
-                        </div>
-                    </div>
-
-                    <div class="btn-wrap">
-                          <a href="/" class="btn btn-sm btn-info " >
-                            <span class="textwhite">Add to basket</span>
-                          </a>
-                    </div>
+          <div >
+              <p class="price-wrap"> 显示商品价格 </p>
           </div>
+      </div>
 
-          <div class="food-item col-sm-4 col-md-3">
-                      <div class="item-img">
-                          <a href="/" >
-                              <img  alt="Hidden Figures" src="http://placehold.it/200x200&text=No Pic">
-                          </a>
-                      </div>
-
-                      <div class="item-info">
-                          <h3 class="title">
-                              <%= link_to("商品名称", products_path(@product))%>
-                          </h3>
-
-                          <p class="information">
-                              <a href="/" >Margot Lee Shetterly</a>
-                          </p>
-
-                          <p>显示商品类别</p>
-                          <p class="format">Carbohydrate level</p>
-
-                          <div >
-                              <p class="price-wrap"> 显示商品价格 </p>
-                          </div>
-                      </div>
-
-                      <div class="btn-wrap">
-                            <a href="/" class="btn btn-sm btn-info ">
-                              <span class="textwhite">Add to basket</span>
-                            </a>
-                      </div>
-            </div>
+      <div class="btn-wrap">
+            <a href="/" class="btn btn-sm btn-info " >
+              <span class="textwhite">Add to basket</span>
+            </a>
+      </div>
+      <% end %>
+    </div>
+<% end %>
 </div>
 
 <div class= "container">
