@@ -2,7 +2,9 @@ class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
     def index
         @products = Product.all
-        # byebug
+        if params[:category].present?
+          @products = @products.where(:category => params[:category])
+        end
     end
 
     def show

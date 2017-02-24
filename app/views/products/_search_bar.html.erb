@@ -24,10 +24,11 @@
 <div class="secondary-header-wrap mb10 h50">
 	<div class="secondary-header">
         <ul class="page-links mobile-nav-content" data-order="2">
-            <li class="mob-nav-shop"><a href="/products/category1">Bestsellers</a></li>
-            <li class="mob-nav-shop"><a href="/products/category1">Coming Soon</a></li>
-            <li class="mob-nav-shop"><a href="/products/category1">Highlights</a></li>
-            <li class="mob-nav-shop"><a href="/products/category1">Bargain Shop</a></li>
+            <li class="mob-nav-shop"><%= link_to "所有商品", products_path %></li>
+            <li class="mob-nav-shop"><%= link_to "巧克力", products_path(:category => "chocolate") %></li>
+            <li class="mob-nav-shop"><%= link_to "坚果", products_path(:category => "nut") %></li>
+            <li class="mob-nav-shop"><%= link_to "浆果", products_path(:category => "berry") %></li>
+            <li class="mob-nav-shop"><%= link_to "生鲜", products_path(:category => "freshfood") %></li>
         </ul>
 	</div>
 </div>
