@@ -1,10 +1,17 @@
+<style>
+#productsTable td
+{
+    text-align:center;
+    vertical-align:middle;
+}
+</style>
 <h2> Product List </h2>
 <div class="pull-right" style="padding-bottom: 20px;">
   <%= link_to("新增产品", new_admin_product_path, class: "btn btn-primary btn-sm") %>
 </div>
-<table class="table table-bordered table-hover">
+<table id="productsTable" class="table table-hover table-responsive">
   <thead>
-    <tr>
+    <tr class="warning">
       <th>#</th>
       <th width="220">Product Pic</th>
       <th>Name</th>
@@ -13,7 +20,7 @@
     </tr>
   </thead>
   <tbody>
-    <% @products.each do |product| %>
+    <% @products.take(4).each do |product| %>
       <tr>
         <td>
           <%= product.id %>

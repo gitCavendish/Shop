@@ -24,7 +24,7 @@
      <%= image_tag p.avatar.thumb.url %> <br>
    <% end %>
    <% end %>
-   
+
 
   <div class="group">
     <%#= f.input :image, as: :file %>
@@ -32,6 +32,6 @@
     <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]"%>
   </div>
 
-  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+  <%= f.submit "Submit", data: { disable_with: "Submitting...", :class => "btn btn-info mt20"} %>
 
 <% end %>

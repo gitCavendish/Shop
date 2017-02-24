@@ -20,10 +20,10 @@
 
   <div class="group">
     <%#= f.input :image, as: :file %>
-    <%= f.label :avatar %><br>
+    <%= f.label "Please upload photos" %><br>
     <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]"%>
   </div>
 
-  <%= f.submit "Submit", data: { disable_with: "Submitting..." } %>
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." }, :class => "btn btn-info mt20" %>
 
 <% end %>
