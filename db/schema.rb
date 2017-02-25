@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20170225010521) do
     t.boolean  "is_paid",          default: false
     t.string   "payment_method"
     t.string   "aasm_state",       default: "order_placed"
+    t.string   "phone_number"
     t.index ["aasm_state"], name: "index_orders_on_aasm_state"
   end
 
