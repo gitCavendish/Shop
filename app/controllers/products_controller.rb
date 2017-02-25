@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   before_action :validate_search_key, only: [:search]
     def index
-        @products = Product.all
+        @products = Product.order("updated_at DESC")
         if params[:category].present?
           @products = @products.where(:category => params[:category])
         end

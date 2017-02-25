@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-      @products = Product.all
-      # byebug
+      @products = Product.order("updated_at DESC")
   end
 end

@@ -7,7 +7,7 @@ class Admin::OrdersController < ApplicationController
 
 
   def index
-    @orders = Order.order("id DESC")
+    @orders = Order.order("updated_at DESC")
   end
 
   def show
@@ -31,7 +31,7 @@ class Admin::OrdersController < ApplicationController
   def cancel
     @order = Order.find(params[:id])
     @order.cancel_order!
-    OrderMailer.notify_cancel(@order).deliver! 
+    OrderMailer.notify_cancel(@order).deliver!
     redirect_to :back
   end
 
