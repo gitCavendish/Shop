@@ -27,7 +27,7 @@ class Admin::ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
+    @products = Product.all.order("updated_at DESC")
   end
 
   def edit
@@ -37,17 +37,14 @@ class Admin::ProductsController < ApplicationController
   def update
     @product = Product.find(params[:id])
 
-    if params[:photo] != nil
-      @product.photos.destroy_all #need to destroy old pics first
+    if @product.update(product_params)
+      if params[:photos] != nil
+        @product.photos.destroy_all #need to destroy old pics first
 
-      parasm[:photos]['avatar'].each do |a|
-        @picture= @product.photos.create(:avatar => a )
+        params[:photos]['avatar'].each do |a|
+          @photo = @product.photos.create(:avatar => a)
+        end
       end
-
-      @product.update(product_params)
-      redirect_to admin_products_path
-
-    elsif @product.update(product_params)
       redirect_to admin_products_path
     else
       render :edit
@@ -60,20 +57,9 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
-
-
-
-
-
-
-
-
-
-
-
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price, :image)
+    params.require(:product).permit(:title, :description, :quantity, :price, :image, :photos, :is_hidden, :is_recommend, :category, :carbolevel)
   end
 end
