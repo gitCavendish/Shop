@@ -1,3 +1,10 @@
+<script type="text/javascript">
+$(function(){
+    $("#advanced-search").click(function(){
+        $("#advanced-pannel").toggle();
+    });
+});
+        </script>
 <div class="header-wrap">
     <div class="primary-wrap">
       <div class="brand-wrap">
@@ -11,14 +18,18 @@
       <div class="search-wrap">
           <%= form_tag search_products_path, method: :get do %>
             <div class="el-wrap header-search-el-wrap">
-              <input type="text" placeholder="Search for foods by keyword / title / description / kinds" name="query_string"  value="<%= params[:q] %>" class="text-input">
+              <input type="text" placeholder="Search for foods by title / description / kinds" name="query_string"  value="<%= params[:q] %>" class="text-input">
+              <input type="hidden" name="search" value="Find book">
               <button class="header-search-btn" type="submit"><span class="text">Search</span></button>
             </div>
             <% end %>
-            <div class="result-wrap no-result"><div class="suggest-result"></div><div class="book-result"></div></div>
-          <a rel="nofollow" href="/search/advanced" class="advanced-search">Advanced Search</a>
+          <button id="advanced-search" class="btn btn-default">Advanced Search</button>
+          <div class="bg-screen"></div>
       </div>
     </div>
+</div>
+
+<div id="advanced-pannel" class="h100 hidden-div">
 </div>
 
 <div class="secondary-header-wrap mb10 h50">

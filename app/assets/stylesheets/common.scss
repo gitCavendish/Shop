@@ -146,3 +146,84 @@ abbr,acronym { border:0}
     float: none;
     margin: 0 auto;
 }
+
+// nav
+.user-nav-wrap {
+  color: #fff;
+  background: #403042;
+}
+
+.user-nav{
+  max-width: 1600px;
+}
+
+
+.user-nav .left-nav, .user-nav, .right-nav{
+  display: -webkit-flex;
+}
+
+.user-nav .left-nav,.user-nav .right-nav {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+    padding: 0
+}
+
+.user-nav .left-nav{
+  padding-left: 1.5rem;
+}
+
+.user-nav .right-nav{
+  padding-right: 1.5rem;
+}
+
+.user-nav .left-nav li, .user-nav .right-nav li{
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.user-nav .left-nav a, .user-nav .rigth-nav a{
+  padding: 0 1rem;
+}
+
+@media all and (min-width: 1024px) {
+    .user-nav .left-nav a,.user-nav .right-nav a {
+        color:rgba(255,255,255,0.8);
+        transition: all .3s
+    }
+}
+
+.user-nav .left-nav a, .user-nav .left-nav span, .user-nav .right-nav a, .user-nav .right-nav span{
+  display: block;
+  line-height: 4.4rem;
+  height: 4.4rem;
+  padding: 0 1.7rem;
+  border: 0;
+  margin: 0;
+  border-right: 1px solid #4c394e;
+  color: rgba(255,255,255,0.8);
+  font-size: 1.4rem;
+}
+
+.user-nav .left-nav .home-icon-link i:before, .user-nav .left-nav .home-icon-link:before, .user-nav .left-nav .home-icon-link i:after, .user-nav .left-nav .home-icon-link:after{
+  margin: 0;
+}
+
+.user-nav-wrap a{
+  text-decoration: none;
+}
+
+.user-nav .left-nav a i:before,.user-nav .left-nav span i:before,.user-nav .right-nav a i:before,.user-nav .right-nav span i:before {
+    margin-right: 1rem;
+    font-size: 1.5em;
+    line-height: 0;
+    position: relative;
+    top: 0.22em
+}
+
+.user-nav .left-nav a, .user-nav .right-nav a{
+  padding: 0 1rem;
+}
