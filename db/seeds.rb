@@ -32,4 +32,25 @@ create_products = for i in 1..7 do
 end
 puts '7 products created.'
 
+images = {
+  image_path1: "#{Rails.root}/app/assets/images/images.jpeg",
+  image_path2: "#{Rails.root}/app/assets/images/images-2.jpeg",
+  image_path3: "#{Rails.root}/app/assets/images/images-3.jpeg",
+  image_path4: "#{Rails.root}/app/assets/images/images-4.jpeg",
+  image_path5: "#{Rails.root}/app/assets/images/images-5.jpeg",
+  image_path6: "#{Rails.root}/app/assets/images/images-6.jpeg",
+  image_path7: "#{Rails.root}/app/assets/images/images-7.jpeg"
+}
+
 # Product.create( title: '西葫芦', description: '碳水化合物含量：7克（中等大 小）', price: rand(10..100), category: "chocolate", image: open("#{Rails.root}/app/assets/images/images.jpeg"), photos: {avatar: open("#{Rails.root}/app/assets/images/images.jpeg")})
+photos = [
+  {product_id: 1, avatar: open(images[:image_path1])},
+  {product_id: 1, avatar: open(images[:image_path2])},
+  {product_id: 1, avatar: open(images[:image_path3])}
+]
+
+create_photos = for i in 1..3 do
+  Photo.create!([product_id: photos[i-1][:product_id], avatar: photos[i-1][:avatar]])
+end
+
+puts 'photos add for product_id1'
