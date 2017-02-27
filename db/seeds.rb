@@ -243,7 +243,7 @@ images={
 #--------------------------------------------------------------------以上--------生鲜-------鳄梨------
   image_path132: "#{Rails.root}/app/assets/images/shengxian/sanwenyu/1.jpg",
   image_path133: "#{Rails.root}/app/assets/images/shengxian/sanwenyu/2.jpg",
-  image_path134: "#{Rails.root}/app/assets/images/shengxian/sanwenyu/3.jpg",
+  image_path134: "#{Rails.root}/app/assets/images/shengxian/sanwenyu/3.png",
   image_path135: "#{Rails.root}/app/assets/images/shengxian/sanwenyu/4.jpg",
   image_path136: "#{Rails.root}/app/assets/images/shengxian/sanwenyu/5.jpg",
   image_path137: "#{Rails.root}/app/assets/images/shengxian/sanwenyu/6.jpg",
