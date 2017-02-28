@@ -5,7 +5,7 @@
     margin-top: 10px;
     margin-bottom: 10px;
     padding-left: 10px;
-    background-color: white;
+    background-color: rgb(253, 253, 253);
 
 }
 
@@ -16,6 +16,7 @@
 body {
 
     text-align: center;
+    background-color: rgb(255, 250, 251);
 }
 
 .center {
@@ -90,20 +91,15 @@ body {
         <% end %>
       </div>
 
-      <div class="item-info" >
-          <h5 class="title">
-              <%= product.title%>
+      <div>
+          <h5>
+              <p><%= product.title%></p>
           </h5>
 
-          <p class="information">
-              <a href="/" >Margot Lee Shetterly</a>
-          </p>
-
-          <p>显示商品类别</p>
-          <p class="format">Carbohydrate level</p>
+          <a class="format" style="color: grey">Carbo level: <%= product.carbolevel%></a>
 
           <div >
-              <p class="price-wrap"> 显示商品价格 </p>
+              <p class="price-wrap" > RMB: <%= product.price%> </p>
           </div>
       </div>
 
@@ -118,12 +114,12 @@ body {
 </div>
 
 <div class= "container">
-    <%= link_to "See More Bestselling foods", products_path(:category => "chocolate"), class: "btn btn-default btn-block" %>
+    <%= link_to "See More Chocolate", products_path(:category => "chocolate"), class: "btn btn-default btn-block" %>
 </div>
 
 <!-- 第二行食品位置 -->
 <div class="container foodbox1" >
-  <h3>Nutsc</h3>
+  <h3>Nuts</h3>
   <hr>
 <% @products.where(:category => "nut").each do |product| %>
     <div class="food-item col-sm-4 col-md-3">
@@ -136,20 +132,15 @@ body {
         <% end %>
       </div>
 
-      <div class="item-info">
-          <h5 class="title">
-              <%= product.title%>
+      <div>
+          <h5>
+              <p><%= product.title%></p>
           </h5>
 
-          <p class="information">
-              <a href="/" >Margot Lee Shetterly</a>
-          </p>
-
-          <p>显示商品类别</p>
-          <p class="format">Carbohydrate level</p>
+          <a class="format" style="color: grey">Carbo level: <%= product.carbolevel%></a>
 
           <div >
-              <p class="price-wrap"> 显示商品价格 </p>
+              <p class="price-wrap" > RMB: <%= product.price%> </p>
           </div>
       </div>
 
@@ -164,7 +155,7 @@ body {
 </div>
 
 <div class= "container">
-    <%= link_to "See More Bestselling foods", products_path(:category => "nut"), class: "btn btn-default btn-block" %>
+    <%= link_to "See More Nuts", products_path(:category => "nut"), class: "btn btn-default btn-block" %>
 </div>
 
 <!-- 第三行食品位置 -->
@@ -184,20 +175,15 @@ body {
         <% end %>
       </div>
 
-      <div class="item-info">
-          <h5 class="title">
-              <%= product.title%>
+      <div>
+          <h5>
+              <p><%= product.title%></p>
           </h5>
 
-          <p class="information">
-              <a href="/" >Margot Lee Shetterly</a>
-          </p>
-
-          <p>显示商品类别</p>
-          <p class="format">Carbohydrate level</p>
+          <a class="format" style="color: grey">Carbo level: <%= product.carbolevel%></a>
 
           <div >
-              <p class="price-wrap"> 显示商品价格 </p>
+              <p class="price-wrap" > RMB: <%= product.price%> </p>
           </div>
       </div>
 
@@ -212,7 +198,7 @@ body {
 </div>
 
 <div class= "container">
-    <%= link_to "See More Bestselling foods", products_path(:category => "berry"), class: "btn btn-default btn-block" %>
+    <%= link_to "See More Berries", products_path(:category => "berry"), class: "btn btn-default btn-block" %>
 </div>
 
 <!-- 第四行食品位置 -->
@@ -232,20 +218,15 @@ body {
         <% end %>
       </div>
 
-      <div class="item-info">
-          <h5 class="title">
-              <%= product.title%>
+      <div>
+          <h5>
+              <p><%= product.title%></p>
           </h5>
 
-          <p class="information">
-              <a href="/" >Margot Lee Shetterly</a>
-          </p>
-
-          <p>显示商品类别</p>
-          <p class="format">Carbohydrate level</p>
+          <a class="format" style="color: grey">Carbo level: <%= product.carbolevel%></a>
 
           <div >
-              <p class="price-wrap"> 显示商品价格 </p>
+              <p class="price-wrap" > RMB: <%= product.price%> </p>
           </div>
       </div>
 
@@ -260,14 +241,14 @@ body {
 </div>
 
 <div class= "container">
-    <%= link_to "See More Bestselling foods", products_path(:category => "freshfood"), class: "btn btn-default btn-block" %>
+    <%= link_to "See More Fresh foods", products_path(:category => "freshfood"), class: "btn btn-default btn-block" %>
 </div>
 
 <br>
 
 <div class="container-fluid">
 
-		<a href="/"><img src="http://r.photo.store.qq.com/psb?/V11HDhVk157QRj/SGWMQkfBcFAnvPSKEbXfe2qcBpGz3i7cm9frPPrzSC0!/r/dFUBAAAAAAAA" width="86%" height="300" ></a>
+		<a href="/"><img src="http://r.photo.store.qq.com/psb?/V11HDhVk157QRj/SGWMQkfBcFAnvPSKEbXfe2qcBpGz3i7cm9frPPrzSC0!/r/dFUBAAAAAAAA" width="86%" height="300" style="opacity:0.85";></a>
 
 </div>
 
