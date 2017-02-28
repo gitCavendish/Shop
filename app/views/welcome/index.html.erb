@@ -14,7 +14,7 @@
 }
 
 body {
-    background-color: rgb(245,245,245);
+
     text-align: center;
 }
 
@@ -74,15 +74,15 @@ body {
 
 
 
-<div class="container foodbox1" >
+<div class="container foodbox1">
 
 
-  <h4>---巧克力---</h4>
+  <h3>Chocolate</h3>
   <hr>
 <% @products.where(:category => "chocolate").each do |product| %>
     <div class="food-item col-sm-4 col-md-3">
       <%= link_to product_path(product) do %>
-      <div class="item-img">
+      <div class="item-img" style="margin-left: 20px">
         <% if product.photos.present? %>
           <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
         <% else %>
@@ -90,10 +90,10 @@ body {
         <% end %>
       </div>
 
-      <div class="item-info">
-          <h3 class="title">
+      <div class="item-info" >
+          <h5 class="title">
               <%= product.title%>
-          </h3>
+          </h5>
 
           <p class="information">
               <a href="/" >Margot Lee Shetterly</a>
@@ -123,12 +123,12 @@ body {
 
 <!-- 第二行食品位置 -->
 <div class="container foodbox1" >
-  <h4>---坚果---</h4>
+  <h3>Nutsc</h3>
   <hr>
 <% @products.where(:category => "nut").each do |product| %>
     <div class="food-item col-sm-4 col-md-3">
       <%= link_to product_path(product) do %>
-      <div class="item-img">
+      <div class="item-img" style="margin-left: 20px">
         <% if product.photos.present? %>
           <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
         <% else %>
@@ -137,9 +137,9 @@ body {
       </div>
 
       <div class="item-info">
-          <h3 class="title">
+          <h5 class="title">
               <%= product.title%>
-          </h3>
+          </h5>
 
           <p class="information">
               <a href="/" >Margot Lee Shetterly</a>
@@ -171,12 +171,12 @@ body {
 <div class="container foodbox1" >
 
 
-  <h4>---浆果---</h4>
+  <h3>Berries</h3>
   <hr>
 <% @products.where(:category => "berry").each do |product| %>
     <div class="food-item col-sm-4 col-md-3">
       <%= link_to product_path(product) do %>
-      <div class="item-img">
+      <div class="item-img" style="margin-left: 20px">
         <% if product.photos.present? %>
           <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
         <% else %>
@@ -185,9 +185,9 @@ body {
       </div>
 
       <div class="item-info">
-          <h3 class="title">
+          <h5 class="title">
               <%= product.title%>
-          </h3>
+          </h5>
 
           <p class="information">
               <a href="/" >Margot Lee Shetterly</a>
@@ -219,12 +219,12 @@ body {
 <div class="container foodbox1" >
 
 
-  <h4>---生鲜---</h4>
+  <h3>Fresh Foods</h3>
   <hr>
 <% @products.where(:category => "freshfood").each do |product| %>
     <div class="food-item col-sm-4 col-md-3">
       <%= link_to product_path(product) do %>
-      <div class="item-img">
+      <div class="item-img" style="margin-left: 20px">
         <% if product.photos.present? %>
           <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
         <% else %>
@@ -233,9 +233,9 @@ body {
       </div>
 
       <div class="item-info">
-          <h3 class="title">
+          <h5 class="title">
               <%= product.title%>
-          </h3>
+          </h5>
 
           <p class="information">
               <a href="/" >Margot Lee Shetterly</a>
