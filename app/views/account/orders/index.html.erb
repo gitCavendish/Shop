@@ -15,7 +15,7 @@
     <tr>
       <td> <%= link_to(order.id, order_path(order.token)) %> </td>
       <td> <%= order.created_at.to_s(:long) %> </td>
-      <td> <%= order.price %></td>
+      <td> <%= order.total %></td>
       <td> <%= order.aasm_state%></td>
     </tr>
     <% end %>
