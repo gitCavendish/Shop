@@ -4,7 +4,9 @@ Rails.application.routes.draw do
     # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
     root 'welcome#index'
+    resources :welcome
 
+    
     resources :products do
         member do
             post :add_to_cart
@@ -12,7 +14,7 @@ Rails.application.routes.draw do
         collection do
             get :search
         end
-        resources :comments 
+        resources :comments
 
     end
 
