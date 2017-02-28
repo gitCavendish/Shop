@@ -72,6 +72,42 @@ body {
  <!--              第一行食品位置            -->
 
 
+ <div class="container foodbox1" >
+   <h3>Nuts</h3>
+   <hr>
+ <% @products.where(:category => "nut").each do |product| %>
+     <div class="food-item col-sm-4 col-md-3">
+       <%= link_to product_path(product) do %>
+       <div class="item-img" style="margin-left: 20px">
+         <% if product.photos.present? %>
+           <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+         <% else %>
+           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+         <% end %>
+       </div>
+
+       <div>
+           <h5>
+               <p><%= product.title%></p>
+           </h5>
+
+           <a class="format" style="color: grey">Carbo level: <%= product.carbolevel%></a>
+
+           <div >
+               <p class="price-wrap" > RMB: <%= product.price%> </p>
+           </div>
+       </div>
+
+       <div class="btn-wrap">
+             <a href="/" class="btn btn-sm btn-info " >
+               <span class="textwhite">Add to basket</span>
+             </a>
+       </div>
+       <% end %>
+     </div>
+ <% end %>
+ </div>
+
 
 <div class="container foodbox1">
 
@@ -116,41 +152,6 @@ body {
 </div>
 
 <!-- 第二行食品位置 -->
-<div class="container foodbox1" >
-  <h3>Nuts</h3>
-  <hr>
-<% @products.where(:category => "nut").each do |product| %>
-    <div class="food-item col-sm-4 col-md-3">
-      <%= link_to product_path(product) do %>
-      <div class="item-img" style="margin-left: 20px">
-        <% if product.photos.present? %>
-          <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-      </div>
-
-      <div>
-          <h5>
-              <p><%= product.title%></p>
-          </h5>
-
-          <a class="format" style="color: grey">Carbo level: <%= product.carbolevel%></a>
-
-          <div >
-              <p class="price-wrap" > RMB: <%= product.price%> </p>
-          </div>
-      </div>
-
-      <div class="btn-wrap">
-            <a href="/" class="btn btn-sm btn-info " >
-              <span class="textwhite">Add to basket</span>
-            </a>
-      </div>
-      <% end %>
-    </div>
-<% end %>
-</div>
 
 <div class= "container">
     <%= link_to "More Nuts", products_path(:category => "nut"), class: "btn btn-default btn-block" %>
