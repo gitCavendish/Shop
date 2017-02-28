@@ -46,7 +46,9 @@
   <div class="col-md-6">
     <div style="height:80px">
     <h2 > <%= @product.title %> </h2>
+    Carbolevel: <span class="text" style="color: red"><%= @product.carbolevel%></span>
   </div>
+
     <div style="height:100px;">
       <p style="color: grey">
         <%= @product.description %>
@@ -88,7 +90,7 @@
     <li class="active"><a data-toggle="tab" href="#Details">商品详情</a></li>
     <li><a data-toggle="tab" href="#Comments">商品评论</a></li>
     <li><a data-toggle="tab" href="#Standards">规格信息</a></li>
-    <li><a data-toggle="tab" href="#Saleterms">售后条款</a></li>
+    <li><a data-toggle="tab" href="#Saleterms">售后保障</a></li>
   </ul>
 
   <div class="tab-content">
@@ -132,12 +134,14 @@
 
     </div>
     <div id="Standards" class="tab-pane fade">
-      <h3>Menu 2</h3>
-      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+      <h3>规格信息</h3>
+      <p>待添加......</p>
     </div>
     <div id="Saleterms" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+      <h3>售后保障</h3>
+      <p>凭质保证书及发票，可享受全国联保服务（奢侈品、钟表除外；奢侈品、钟表由京东联系保修，享受法定三包售后服务），与您亲临商场选购的商品享受相同的质量保证。还为您提供具有竞争力的商品价格和运费政策，请您放心购买！
+
+注：因厂家会在没有任何提前通知的情况下更改产品包装、产地或者一些附件，本司不能确保客户收到的货物与商城图片、产地、附件说明完全一致。只能确保为原厂正货！并且保证与当时市场上同样主流新品一致。若本商城没有及时更新，请大家谅解！</p>
     </div>
   </div>
 </div>

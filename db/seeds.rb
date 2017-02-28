@@ -21,50 +21,50 @@ products = [
 
 #巧克力
 { title: '100%纯可可脂巧克力', description: '采用非州产地可可豆原料生产，纯正欧洲风味及口感幼滑，属于苦甜类口味。沿用传统方法，精心制作，还原经典
-，绝无取巧。值得您悉心品味！', price: rand(10..100), category: "chocolate", is_hidden: false, is_recommend: true, carbolevel: 1},
+，绝无取巧。值得您悉心品味！', price: rand(10..100), category: "chocolate", is_hidden: false, is_recommend: true, carbolevel: '1-10%' },
 { title: '96%醇黑巧克力', description: '采用非州产地可可豆原料生产，纯正欧洲风味及口感幼滑，属于苦甜类口味。沿用传统方法，精心制作，还原经典
-，绝无取巧。值得您悉心品味！', price: rand(10..100), category: "chocolate", is_hidden: false, is_recommend: true, carbolevel: 1},
+，绝无取巧。值得您悉心品味！', price: rand(10..100), category: "chocolate", is_hidden: false, is_recommend: true, carbolevel: '1-10%'},
 { title: '92%醇黑巧克力', description: '采用非州产地可可豆原料生产，纯正欧洲风味及口感幼滑，属于苦甜类口味。沿用传统方法，精心制作，还原经典
-，绝无取巧。值得您悉心品味！', price: rand(10..100), category: "chocolate", is_hidden: false, is_recommend: true, carbolevel: 1},
+，绝无取巧。值得您悉心品味！', price: rand(10..100), category: "chocolate", is_hidden: false, is_recommend: true, carbolevel: '10-20%'},
 { title: '88%醇黑巧克力', description: '采用非州产地可可豆原料生产，纯正欧洲风味及口感幼滑，属于苦甜类口味。沿用传统方法，精心制作，还原经典
-，绝无取巧。值得您悉心品味！', price: rand(10..100), category: "chocolate", is_hidden: false, is_recommend: true, carbolevel: 1},
+，绝无取巧。值得您悉心品味！', price: rand(10..100), category: "chocolate", is_hidden: false, is_recommend: true, carbolevel: '10-20%'},
 { title: '85%醇黑巧克力', description: '采用非州产地可可豆原料生产，纯正欧洲风味及口感幼滑，属于苦甜类口味。沿用传统方法，精心制作，还原经典
-，绝无取巧。值得您悉心品味！', price: rand(10..100), category: "chocolate", is_hidden: false, is_recommend: true, carbolevel: 1},
+，绝无取巧。值得您悉心品味！', price: rand(10..100), category: "chocolate", is_hidden: false, is_recommend: true, carbolevel: '10-20%'},
 { title: '82%醇黑巧克力', description: '采用非州产地可可豆原料生产，纯正欧洲风味及口感幼滑，属于苦甜类口味。沿用传统方法，精心制作，还原经典
-，绝无取巧。值得您悉心品味！', price: rand(10..100), category: "chocolate", is_hidden: false, is_recommend: true, carbolevel: 1},
+，绝无取巧。值得您悉心品味！', price: rand(10..100), category: "chocolate", is_hidden: false, is_recommend: true, carbolevel: '20-30%'},
 { title: '80%醇黑巧克力', description: '采用非州产地可可豆原料生产，纯正欧洲风味及口感幼滑，属于苦甜类口味。沿用传统方法，精心制作，还原经典
-，绝无取巧。值得您悉心品味！', price: rand(10..100), category: "chocolate", is_hidden: false, is_recommend: true, carbolevel: 1},
+，绝无取巧。值得您悉心品味！', price: rand(10..100), category: "chocolate", is_hidden: false, is_recommend: true, carbolevel: '20-30%'},
 
 #坚果
-{ title: '板栗', description: '无添加，口味纯正。富含健康油脂，和各类维生素及矿物质。经常食用有益大脑，居家旅行必备小食。', price: rand(5..50), category: "nut", is_hidden: false, is_recommend: true, carbolevel: 3},
-{ title: '扁桃', description: '无添加，口味纯正。富含健康油脂，和各类维生素及矿物质。经常食用有益大脑，居家旅行必备小食。', price: rand(5..50), category: "nut", is_hidden: false, is_recommend: true, carbolevel: 3},
-{ title: '核桃', description: '无添加，口味纯正。富含健康油脂，和各类维生素及矿物质。经常食用有益大脑，居家旅行必备小食。', price: rand(5..50), category: "nut", is_hidden: false, is_recommend: true, carbolevel: 3},
-{ title: '开心果', description: '无添加，口味纯正。富含健康油脂，和各类维生素及矿物质。经常食用有益大脑，居家旅行必备小食。', price: rand(5..50), category: "nut", is_hidden: false, is_recommend: true, carbolevel: 3 },
-{ title: '松子', description: '无添加，口味纯正。富含健康油脂，和各类维生素及矿物质。经常食用有益大脑，居家旅行必备小食。', price: rand(5..50), category: "nut", is_hidden: false, is_recommend: true, carbolevel: 3 },
-{ title: '夏威夷果', description: '无添加，口味纯正。富含健康油脂，和各类维生素及矿物质。经常食用有益大脑，居家旅行必备小食。', price: rand(5..50), category: "nut", is_hidden: false, is_recommend: true, carbolevel: 3},
-{ title: '腰果', description: '无添加，口味纯正。富含健康油脂，和各类维生素及矿物质。经常食用有益大脑，居家旅行必备小食。', price: rand(5..50), category: "nut", is_hidden: false, is_recommend: true, carbolevel: 3},
-{ title: '榛子', description: '无添加，口味纯正。富含健康油脂，和各类维生素及矿物质。经常食用有益大脑，居家旅行必备小食。', price: rand(5..50), category: "nut", is_hidden: false, is_recommend: true, carbolevel: 3 },
+{ title: '板栗', description: '无添加，口味纯正。富含健康油脂，和各类维生素及矿物质。经常食用有益大脑，居家旅行必备小食。', price: rand(5..50), category: "nut", is_hidden: false, is_recommend: true, carbolevel: '10-20%'},
+{ title: '扁桃', description: '无添加，口味纯正。富含健康油脂，和各类维生素及矿物质。经常食用有益大脑，居家旅行必备小食。', price: rand(5..50), category: "nut", is_hidden: false, is_recommend: true, carbolevel: '10-20%'},
+{ title: '核桃', description: '无添加，口味纯正。富含健康油脂，和各类维生素及矿物质。经常食用有益大脑，居家旅行必备小食。', price: rand(5..50), category: "nut", is_hidden: false, is_recommend: true, carbolevel: '10-20%'},
+{ title: '开心果', description: '无添加，口味纯正。富含健康油脂，和各类维生素及矿物质。经常食用有益大脑，居家旅行必备小食。', price: rand(5..50), category: "nut", is_hidden: false, is_recommend: true, carbolevel: '10-20%' },
+{ title: '松子', description: '无添加，口味纯正。富含健康油脂，和各类维生素及矿物质。经常食用有益大脑，居家旅行必备小食。', price: rand(5..50), category: "nut", is_hidden: false, is_recommend: true, carbolevel: '10-20%' },
+{ title: '夏威夷果', description: '无添加，口味纯正。富含健康油脂，和各类维生素及矿物质。经常食用有益大脑，居家旅行必备小食。', price: rand(5..50), category: "nut", is_hidden: false, is_recommend: true, carbolevel: '10-20%'},
+{ title: '腰果', description: '无添加，口味纯正。富含健康油脂，和各类维生素及矿物质。经常食用有益大脑，居家旅行必备小食。', price: rand(5..50), category: "nut", is_hidden: false, is_recommend: true, carbolevel: '10-20%'},
+{ title: '榛子', description: '无添加，口味纯正。富含健康油脂，和各类维生素及矿物质。经常食用有益大脑，居家旅行必备小食。', price: rand(5..50), category: "nut", is_hidden: false, is_recommend: true, carbolevel: '10-20%' },
 
 
 #浆果
-{ title: '黑加仑', description: '精选优质大果，细致圆熟，味道酸甜，可食率高，如宝石般气质动人，颗颗饱满，细腻脆嫩，更加新鲜诱人。', price: rand(5..50), category: "berry", is_hidden: true, is_recommend: false, carbolevel: 2},
-{ title: '蓝莓', description: '精选优质大果，细致圆熟，味道酸甜，可食率高，如宝石般气质动人，颗颗饱满，细腻脆嫩，更加新鲜诱人。', price: rand(5..50), category: "berry", is_hidden: true, is_recommend: false, carbolevel: 2 },
-{ title: '蔓越莓', description: '精选优质大果，细致圆熟，味道酸甜，可食率高，如宝石般气质动人，颗颗饱满，细腻脆嫩，更加新鲜诱人。', price: rand(5..50), category: "berry", is_hidden: true, is_recommend: false, carbolevel: 2},
-{ title: '沙棘', description: '精选优质大果，细致圆熟，味道酸甜，可食率高，如宝石般气质动人，颗颗饱满，细腻脆嫩，更加新鲜诱人。', price: rand(5..50), category: "berry", is_hidden: true, is_recommend: false, carbolevel: 2},
-{ title: '圣女果', description: '精选优质大果，细致圆熟，味道酸甜，可食率高，如宝石般气质动人，颗颗饱满，细腻脆嫩，更加新鲜诱人。', price: rand(5..50), category: "berry", is_hidden: true, is_recommend: false, carbolevel: 2},
-{ title: '树莓', description: '精选优质大果，细致圆熟，味道酸甜，可食率高，如宝石般气质动人，颗颗饱满，细腻脆嫩，更加新鲜诱人。', price: rand(5..50), category: "berry", is_hidden: true, is_recommend: false, carbolevel: 2},
+{ title: '黑加仑', description: '精选优质大果，细致圆熟，味道酸甜，可食率高，如宝石般气质动人，颗颗饱满，细腻脆嫩，更加新鲜诱人。', price: rand(5..50), category: "berry", is_hidden: true, is_recommend: false, carbolevel: '20-30%'},
+{ title: '蓝莓', description: '精选优质大果，细致圆熟，味道酸甜，可食率高，如宝石般气质动人，颗颗饱满，细腻脆嫩，更加新鲜诱人。', price: rand(5..50), category: "berry", is_hidden: true, is_recommend: false, carbolevel: '20-30%' },
+{ title: '蔓越莓', description: '精选优质大果，细致圆熟，味道酸甜，可食率高，如宝石般气质动人，颗颗饱满，细腻脆嫩，更加新鲜诱人。', price: rand(5..50), category: "berry", is_hidden: true, is_recommend: false, carbolevel: '20-30%'},
+{ title: '沙棘', description: '精选优质大果，细致圆熟，味道酸甜，可食率高，如宝石般气质动人，颗颗饱满，细腻脆嫩，更加新鲜诱人。', price: rand(5..50), category: "berry", is_hidden: true, is_recommend: false, carbolevel: '20-30%'},
+{ title: '圣女果', description: '精选优质大果，细致圆熟，味道酸甜，可食率高，如宝石般气质动人，颗颗饱满，细腻脆嫩，更加新鲜诱人。', price: rand(5..50), category: "berry", is_hidden: true, is_recommend: false, carbolevel: '20-30%'},
+{ title: '树莓', description: '精选优质大果，细致圆熟，味道酸甜，可食率高，如宝石般气质动人，颗颗饱满，细腻脆嫩，更加新鲜诱人。', price: rand(5..50), category: "berry", is_hidden: true, is_recommend: false, carbolevel: '20-30%'},
 
 
 
 #生鲜
-{ title: '鳄梨', description: '“来自森林的奶油”，你值得拥有。', price: rand(5..50), category: "freshfood", is_hidden: false, is_recommend: true, carbolevel: 3},
-{ title: '三文鱼', description: '鲜！滑！嫩！爽！', price: rand(5..50), category: "freshfood", is_hidden: false, is_recommend: true, carbolevel: 3},
-{ title: '西蓝花', description: '低热量，富含纤维素及各类维生素矿物质。', price: rand(5..50), category: "freshfood", is_hidden: false, is_recommend: true, carbolevel: 3},
-{ title: '鸡蛋', description: '关于鸡蛋，很多谣言。吃了都说好！', price: rand(5..50), category: "freshfood", is_hidden: false, is_recommend: true, carbolevel: 3},
-{ title: '牛肉', description: '鲜！滑！嫩！爽！', price: rand(5..50), category: "freshfood", is_hidden: false, is_recommend: true, carbolevel: 3},
-{ title: '鲜虾', description: '鲜！滑！嫩！爽！', price: rand(5..50), category: "freshfood", is_hidden: false, is_recommend: true, carbolevel: 3},
-{ title: '紫甘蓝', description: '低热量，富含纤维素及各类维生素矿物质。', price: rand(5..50), category: "freshfood", is_hidden: false, is_recommend: true, carbolevel: 3},
-{ title: '西芹', description: '低热量，富含纤维素及各类维生素矿物质。', price: rand(5..50), category: "freshfood", is_hidden: false, is_recommend: true, carbolevel: 3},
+{ title: '鳄梨', description: '“来自森林的奶油”，你值得拥有。', price: rand(5..50), category: "freshfood", is_hidden: false, is_recommend: true, carbolevel: '0-10%'},
+{ title: '三文鱼', description: '鲜！滑！嫩！爽！', price: rand(5..50), category: "freshfood", is_hidden: false, is_recommend: true, carbolevel: '0-10%'},
+{ title: '西蓝花', description: '低热量，富含纤维素及各类维生素矿物质。', price: rand(5..50), category: "freshfood", is_hidden: false, is_recommend: true, carbolevel: '0-10%'},
+{ title: '鸡蛋', description: '关于鸡蛋，很多谣言。吃了都说好！', price: rand(5..50), category: "freshfood", is_hidden: false, is_recommend: true, carbolevel: '0-10%'},
+{ title: '牛肉', description: '鲜！滑！嫩！爽！', price: rand(5..50), category: "freshfood", is_hidden: false, is_recommend: true, carbolevel: '0-10%'},
+{ title: '鲜虾', description: '鲜！滑！嫩！爽！', price: rand(5..50), category: "freshfood", is_hidden: false, is_recommend: true, carbolevel: '0-10%'},
+{ title: '紫甘蓝', description: '低热量，富含纤维素及各类维生素矿物质。', price: rand(5..50), category: "freshfood", is_hidden: false, is_recommend: true, carbolevel: '0-10%'},
+{ title: '西芹', description: '低热量，富含纤维素及各类维生素矿物质。', price: rand(5..50), category: "freshfood", is_hidden: false, is_recommend: true, carbolevel: '0-10%'},
 ]
 
 
