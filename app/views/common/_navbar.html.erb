@@ -22,7 +22,7 @@
     <div style="margin: auto;">
     </div>
 
-      <ul class="right-nav mobile-nav-content" data-order="2">
+      <ul class="right-nav " data-order="2">
         <li class="mob-nav-account">
           <%= link_to carts_path do %>
             <i class="fa fa-shopping-cart">( </i> <%= current_cart.products.count %> )
@@ -37,7 +37,7 @@
               Hi!, <%= current_user.email %>
               <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" >
               <% if current_user.admin?%>
               <li>
                 <%= link_to("Admin 选单", admin_products_path)%>
