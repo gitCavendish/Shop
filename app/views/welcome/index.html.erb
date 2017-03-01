@@ -99,9 +99,10 @@ body {
        </div>
 
        <div class="btn-wrap", style="margin-bottom: 20px">
-             <a href="/" class="btn btn-sm btn-info " >
-               <span class="textwhite">Add to Cart</span>
-             </a>
+
+               <%= link_to("Add to Cart", add_to_cart_product_path(product), :method => :post, :class => "btn btn-info btn-sm")%>
+
+
        </div>
        <% end %>
      </div>
@@ -142,9 +143,7 @@ body {
       </div>
 
       <div class="btn-wrap", style="margin-bottom: 20px">
-            <a href="/" class="btn btn-sm btn-info " >
-              <span class="textwhite">Add to Cart</span>
-            </a>
+          <%= link_to("Add to Cart", add_to_cart_product_path(product), :method => :post, :class => "btn btn-info btn-sm")%>
       </div>
       <% end %>
     </div>
@@ -185,9 +184,7 @@ body {
       </div>
 
       <div class="btn-wrap", style="margin-bottom: 20px">
-            <a href="/" class="btn btn-sm btn-info " >
-              <span class="textwhite">Add to Cart</span>
-            </a>
+         <%= link_to("Add to Cart", add_to_cart_product_path(product), :method => :post, :class => "btn btn-info btn-sm")%>
       </div>
       <% end %>
     </div>
@@ -228,9 +225,7 @@ body {
       </div>
 
       <div class="btn-wrap", style="margin-bottom: 20px">
-            <a href="/" class="btn btn-sm btn-info " >
-              <span class="textwhite">Add to Cart</span>
-            </a>
+         <%= link_to("Add to Cart", add_to_cart_product_path(product), :method => :post, :class => "btn btn-info btn-sm")%>
       </div>
       <% end %>
     </div>
