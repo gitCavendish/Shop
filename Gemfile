@@ -40,6 +40,7 @@ gem 'font-awesome-rails'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'figaro'
+gem 'fog'
 
 gem 'letter_opener', group: :development
 
