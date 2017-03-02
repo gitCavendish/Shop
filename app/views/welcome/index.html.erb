@@ -99,9 +99,7 @@ body {
        </div>
 
        <div class="btn-wrap", style="margin-bottom: 20px">
-             <a href="/" class="btn btn-sm btn-info " >
-               <span class="textwhite">Add to basket</span>
-             </a>
+          <%= link_to("Add to cart", add_to_cart_product_path(product), :method =>:post, :class => "btn btn-sm btn-info") %>
        </div>
        <% end %>
      </div>
@@ -244,7 +242,7 @@ body {
 
 <div class="container-fluid">
 
-		<a href="/"><img src="http://r.photo.store.qq.com/psb?/V11HDhVk157QRj/SGWMQkfBcFAnvPSKEbXfe2qcBpGz3i7cm9frPPrzSC0!/r/dFUBAAAAAAAA" width="75%" height="280" style="opacity:0.85";></a>
+		<a href="/"><img src="http://r.photo.store.qq.com/psb?/V11HDhVk157QRj/SGWMQkfBcFAnvPSKEbXfe2qcBpGz3i7cm9frPPrzSC0!/r/dFUBAAAAAAAA" width="75%" height="auto;" style="opacity:0.85";></a>
 
 </div>
 
