@@ -6,4 +6,8 @@ class WelcomeController < ApplicationController
   def show
     render "welcome/about"
   end
+
+  def about
+  end
+  
 end
