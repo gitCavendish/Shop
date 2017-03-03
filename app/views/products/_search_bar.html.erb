@@ -30,10 +30,36 @@ $(function(){
     </div>
 </div>
 
-<div id="advanced-pannel" class="h100 hidden-div">
+<div id="advanced-pannel" class="h130 hidden-div">
+  <%= simple_form_for :s, url: search_products_path, method: :get do |f|%>
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-3">
+      <%= f.input :content, :required => false, :autofocus => true%>
+    </div>
+    <div class="col-md-3">
+      <%= f.input :lowprice, placeholder: "最低价", :required => false%>
+    </div>
+    <div class="col-md-3">
+      <%= f.input :highprice, placeholder: "最高价", :required => false%>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-3">
+      <%= f.label :category%>
+      <%= f.select :category, options_for_select([["Select One", ""], "chocolate", "nut", "berry", "freshfood"]) %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label :carbolevel%>
+      <%= f.select :carbolevel, options_for_select([["Select One", ""], "0-10%", "10-20%", "20-30%", ">30%"]), class: "form-control"%>
+    </div>
+  </div>
+  <div class="col-md-3 mb20">
+      <%= f.submit "Submit", data: { disable_with: "Submitting..."}, :class => "btn btn-info col-md-12" %>
+    </div>
+  <% end %>
 </div>
 
-<div class="secondary-header-wrap mb10 h50">
+<div class="secondary-header-wrap mb10 h50 col-md-12">
 	<div class="secondary-header">
         <ul class="page-links mobile-nav-content" data-order="2">
             <li class="mob-nav-shop"><%= link_to "所有商品", products_path %></li>

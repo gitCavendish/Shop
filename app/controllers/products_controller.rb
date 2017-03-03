@@ -27,6 +27,22 @@ class ProductsController < ApplicationController
 
     def search
         @products = Product.ransack(title_or_description_cont: @q).result(distinct: true)
+        if params[:s].present?
+          @products = @products.where("title LIKE '%#{params[:s][:content]}%' or description LIKE
+          '%#{params[:s][:content]}%'")
+          if params[:s][:lowprice].present?
+            @products = @products.where("price>=?", params[:s][:lowprice])
+          end
+          if params[:s][:lowprice].present?
+            @products = @products.where("price<=?", params[:s][:highprice])
+          end
+          if params[:s][:category].present?
+            @products = @products.where("category = ?", params[:s][:category])
+          end
+          if params[:s][:carbolevel].present?
+            @products = @products.where("carbolevel = ?", params[:s][:carbolevel])
+          end
+        end
     end
 
     protected
