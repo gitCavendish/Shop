@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     root 'welcome#index'
     resources :welcome
 
-    
+
     resources :products do
         member do
             post :add_to_cart
