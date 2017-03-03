@@ -1,7 +1,6 @@
 <div class="row">
 <%= render "products/search_bar" %>
 </div>
-<div class="">
   <% @products.each do |product| %>
     <div class="col-xs-6 col-md-3 pt5 pb10">
       <%= link_to product_path(product) do %>
@@ -17,4 +16,3 @@
       </div>
     </div>
   <% end %>
-</div>

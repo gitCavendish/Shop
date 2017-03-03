@@ -72,7 +72,7 @@ create_products = for i in 1..29 do
   Product.create!([title: products[i - 1][:title], description: products[i - 1][:description], price: rand(5..100), quantity: 100, category: products[i-1][:category], is_hidden: products[i-1][:is_hidden], is_recommend: products[i-1][:is_recommend], carbolevel: products[i-1][:carbolevel]])
 end
 
-puts "7 products created."
+puts "products created."
 
 images={
   image_path1: "#{Rails.root}/app/assets/images/chocolate/1.jpg",
@@ -495,4 +495,4 @@ create_photos = for i in 1..172 do
   Photo.create!([product_id: photos[i-1][:product_id], avatar: photos[i-1][:avatar]])
 end
 
-puts 'photos add for product_id1'
+puts 'photos add for products'
