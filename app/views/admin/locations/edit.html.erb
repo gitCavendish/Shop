@@ -1,0 +1,24 @@
+<div class="col-md-offset-1 col-md-10">
+<h2> Edit Location</h2>
+<%= simple_form_for [:admin, @location] do |f| %>
+
+  <div class="group">
+    <%= f.input :address %>
+  </div>
+
+  <div class="group">
+    <%= f.input :description, :input_html => {:rows => 5} %>
+  </div>
+
+  <div class="group">
+    <%= f.input :latitude, :disabled => true %>
+  </div>
+
+  <div class="group">
+    <%= f.input :longitude, :disabled => true %>
+  </div>
+
+  <%= f.submit "Submit", data: { disable_with: "Submitting..." }, :class => "btn btn-info col-md-12" %>
+
+<% end %>
+</div>
