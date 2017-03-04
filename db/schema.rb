@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170228065853) do
+ActiveRecord::Schema.define(version: 20170304095921) do
 
   create_table "cart_items", force: :cascade do |t|
     t.integer  "cart_id"
@@ -78,6 +78,9 @@ ActiveRecord::Schema.define(version: 20170228065853) do
     t.boolean  "is_hidden"
     t.boolean  "is_recommend"
     t.string   "carbolevel"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "address"
   end
 
   create_table "users", force: :cascade do |t|
