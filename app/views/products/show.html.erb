@@ -1,11 +1,17 @@
 <style>
-#limitpic {
-
-  width: 97.1px;
-
+.limitpic {
+  height: 97.1px;
 }
 
 </style>
+<script type="text/javascript">
+$(function(){
+  $('.limitpic').click(function (event) {
+  var src = $(this).attr("src")
+  $('#imageshow').attr({"src" : src, width:"400",height:"400"})
+  });
+});
+</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,27 +27,18 @@
 
 <div class="container" style="padding-top: 20px">
   <div class="col-md-6">
-
     <% if @product.photos.present? %>
-      <% @photos.each_with_index do |p, index| %>
-        <% if index == 0 %>
-          <%= image_tag p.avatar.medium.url %>
-
-        <br><br>
-
-        <div style="width: 500px">
-            <ul >
-                  <% else %>
-                    <span><%= image_tag p.avatar.thumb.url, id: "limitpic" %></span>
-                  <% end %>
-                  <% end %>
-            </ul>
+          <%= image_tag @product.photos[0].avatar.medium.url, id: "imageshow" %>
+          <br><br>
+        <div style="">
+            <% @photos.first(4).each_with_index do |p, index| %>
+            <span><%= image_tag p.avatar.thumb.url, class: "limitpic" %></span>
+            <% end %>
         </div>
     <% else %>
         <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
     <% end %>
   </div>
-
 
   <div class="col-md-6">
     <div style="height:80px">
