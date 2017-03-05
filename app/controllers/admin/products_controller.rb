@@ -7,11 +7,11 @@ class Admin::ProductsController < ApplicationController
   def new
     @product = Product.new
     @photo = @product.photos.build #for multi-pics
+    @locations =Location.all
   end
 
   def create
     @product = Product.new(product_params)
-
     if @product.save
 
       if params[:photos] != nil
@@ -32,6 +32,7 @@ class Admin::ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    @locations =Location.all
   end
 
   def update
@@ -60,6 +61,6 @@ class Admin::ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:title, :description, :quantity, :price, :image, :photos, :is_hidden, :is_recommend, :category, :carbolevel)
+    params.require(:product).permit(:title, :description, :quantity, :price, :image, :photos, :is_hidden, :is_recommend, :category, :carbolevel, :location_id)
   end
 end

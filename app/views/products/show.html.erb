@@ -39,7 +39,8 @@ $(function(){
         <%= image_tag("http://placehold.it/400x400&text=No Pic", class: "thumbnail") %>
     <% end %>
   </div>
-
+  <%= text_field_tag :product_latitude, Location.where("id=#{@product.location_id}")[0]["latitude"], class: "hidden"%>
+  <%= text_field_tag :product_longitude, Location.where("id=#{@product.location_id}")[0]["longitude"], class: "hidden"%>
   <div class="col-md-6">
     <div style="height:80px">
     <h2 > <%= @product.title %> </h2>
@@ -93,8 +94,17 @@ $(function(){
   <div class="tab-content">
 
     <div id="Details" class="tab-pane fade in active">
-      <h3 class="text-center">商品详情</h3>
       <div class="container tab-pane fade in active" style="padding-left: 170px" >
+        <!-- producing area  -->
+        <div class="mt10">
+          <div class="col-md-4 mb10">
+            <div id="googleMap" style='width: 300px; height: 200px;'></div>
+          </div>
+          <div class="col-md-6">
+            <p class="lead"> 原产地介绍 </p>
+            <p><%= Location.where("id=#{@product.location_id}")[0]["description"]%></p>
+          </div>
+        </div>
         <% if @product.photos.present? %>
             <% @photos.each_with_index do |p, index| %>
                 <%= image_tag p.avatar.url, resize_to_fit:[400,600], class: "thumbnail" %>
@@ -143,3 +153,21 @@ $(function(){
   </div>
 </div>
 </html>
+
+<script>
+function myMap() {
+  var myCenter = new google.maps.LatLng($("#product_latitude").val(), $("#product_longitude").val())
+  var mapProp= {
+      center: myCenter,
+      zoom:1,
+};
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var marker = new google.maps.Marker({
+  position: myCenter,
+  map: map,
+  title: 'Hello World!'
+});
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmjnZymeUq4KlIP7q5xVDnWpMJ9VUkUBA&callback=myMap"></script>
+<!-- end -->

@@ -1,0 +1,40 @@
+<h2> Location List </h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增产地", new_admin_location_path, class: "btn btn-primary btn-sm") %>
+</div>
+<table class="table table-bordered" style="overflow: hidden">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Address</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
+      <th width="400"> description</th>
+      <th width="100"> Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @locations.each do |location| %>
+      <tr>
+        <td>
+          <%= location.id %>
+        </td>
+        <td>
+          <%= location.address%>
+        </td>
+        <td>
+          <%= location.latitude %>
+        </td>
+        <td>
+          <%= location.longitude %>
+        </td>
+        <td>
+          <%= location.description%>
+        </td>
+        <td>
+          <%= link_to("Edit", edit_admin_location_path(location)) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
