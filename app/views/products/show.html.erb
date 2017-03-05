@@ -93,15 +93,15 @@ $(function(){
   <div class="tab-content">
 
     <div id="Details" class="tab-pane fade in active">
-      <div class="container tab-pane fade in active" style="padding-left: 170px" >
+      <div class="container tab-pane fade in active centerPhoto" >
         <!-- producing area  -->
         <% if @product.location_id.present? %>
           <%= text_field_tag :product_latitude, Location.where("id=#{@product.location_id}")[0]["latitude"], class: "hidden"%>
           <%= text_field_tag :product_longitude, Location.where("id=#{@product.location_id}")[0]["longitude"], class: "hidden"%>
-          <div class="mt10">
 
-            <div class="col-md-4 mb10">
-              <div id="googleMap" style='width: 300px; height: 200px;'></div>
+          <div class="mt10">
+            <div class="col-md-6 mb10">
+              <div id="googleMap" style='max-width: 300px; height: 200px;'></div>
             </div>
             <div class="col-md-6">
               <p class="lead"> 原产地介绍 </p>
@@ -111,7 +111,7 @@ $(function(){
         <% end %>
         <% if @product.photos.present? %>
             <% @photos.each_with_index do |p, index| %>
-                <%= image_tag p.avatar.url, resize_to_fit:[400,600], class: "thumbnail" %>
+                <%= image_tag p.avatar.url, resize_to_fit:[400,600], class: "thumbnail centerPhoto" %>
                 <br >
                 <br>
             <% end %>
@@ -163,7 +163,7 @@ function myMap() {
   var myCenter = new google.maps.LatLng($("#product_latitude").val(), $("#product_longitude").val())
   var mapProp= {
       center: myCenter,
-      zoom:3,
+      zoom:5,
 };
   var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
   var marker = new google.maps.Marker({
