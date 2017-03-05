@@ -2,7 +2,7 @@ class Admin::LocationsController < ApplicationController
   layout "admin"
 
   def index
-    @locations = Location.all
+    @locations = Location.all.order("updated_at DESC")
   end
 
   def new
