@@ -25,7 +25,7 @@ class Admin::LocationsController < ApplicationController
 
   def update
     @location = Location.find(params[:id])
-    if @location.update(product_params)
+    if @location.update(location_params)
       redirect_to admin_locations_path
     else
       render :edit
