@@ -5,4 +5,10 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :photos
 
   belongs_to :location
+
+  def increment(by = 1)
+    self.views ||= 0
+    self.views += by
+    self.save
+  end
 end
