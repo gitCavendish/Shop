@@ -4,7 +4,7 @@
     padding-top: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding-left: 10px;
+    padding-left: ;
     background-color: rgb(253, 253, 253);
 
 }
@@ -16,13 +16,38 @@
 body {
 
     text-align: center;
-    background-color: rgb(255, 250, 251);
+
 }
 
 .center {
     margin: auto;
     width: 80%;
     padding: 10px;
+}
+
+.hot {
+      margin-top: 20px;
+      margin-bottom: 20px;
+
+
+}
+
+.bg1{
+     background-image: url("bg2.jpg")
+
+}
+
+.bg2{
+     background-image: url("bg6.png")
+
+}
+
+.bg3{
+     background-image: url("cart1.jpg")
+}
+
+.item-img{
+  position:relative;
 }
 </style>
 
@@ -51,35 +76,29 @@ body {
 <div class="row">
   <%= render "products/search_bar" %>
 </div>
-    <div class="block ">
-    	<div class="tab-wrap module type-paragraph grid tab-2358 tab-active">
+  <div class="block " style="margin-left: -20px; margin-right: -20px; ">
+			<a href="/"><img src="http://r.photo.store.qq.com/psb?/V11HDhVk157QRj/QspuAGsZBUX13doj4TGCE1kST*93HSfg3UQfK2C4Z34!/r/dGcBAAAAAAAA", height= "110%", width= "100%"></a>
+      <%= link_to surprise_products_path, method: :get do %>
+      <div class="fa fa-american-sign-language-interpreting" style="font-size:2rem;" role="button"> Suprise for you</div>
+      <% end %>
+  </div>
 
-    		<div class="tab">
-    			<div class="paragraph-content">
-    		        <a href="/"><img src="http://r.photo.store.qq.com/psb?/V11HDhVk157QRj/QspuAGsZBUX13doj4TGCE1kST*93HSfg3UQfK2C4Z34!/r/dGcBAAAAAAAA", width= "100%"></a>
-                <%= link_to surprise_products_path, method: :get do %>
-                  <div class="fa fa-american-sign-language-interpreting" style="font-size: 1.5em;float:right;" role="button">Suprise for you</div>
-                <% end %>
-          </div>
-        </div>
-      </div>
-    </div>
- <!--              第一行食品位置            -->
 
- <div class="container foodbox1" >
-   <h3>Nuts</h3>
+<!--              第一行食品位置            -->
+ <div class="row foodbox1" >
+   <div class="block" style="height: 60px; margin-top: -20px;">
+      <h1 class="col-lg-12" style="color: red" >Hotest!</h1>
+   </div>
    <hr>
- <% @products.where(:category => "nut").first(4).each do |product| %>
+<div class="col-lg-12" style="padding: 0px 100px">
+ <% @products.where(:is_recommend => true).first(8).each do |product| %>
      <div class="food-item col-sm-4 col-md-3">
        <%= link_to product_path(product) do %>
-       <div class="item-img" style="margin-left: 20px">
+       <div class="item-img" style="position:relative">
          <% if product.photos.present? %>
-           <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+           <%= image_tag(product.photos[0].avatar.thumb.url) %>
          <% else %>
-           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-         <% end %>
-         <% if product.is_recommend %>
-            <div class="hot-log">Hot</div>
+           <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
          <% end %>
        </div>
 
@@ -102,49 +121,158 @@ body {
      </div>
  <% end %>
  </div>
+</div>
 
- <div class= "container">
-     <%= link_to "More Nuts", products_path(:category => "nut"), class: "btn btn-default btn-block" %>
- </div>
+<div class="bg1" style="padding-top:80px; background-repeat:no-repeat;background-position: center;">
+  <div class="row" >
+      <div class="col-lg-6">
+        <img class="img-circle" src="tb1.png" alt="Generic placeholder image" width="140" height="140">
+        <p style="margin-top: 12px; color:white;font-size:1.3em;">《黑天鹅》作者Nassim Nicholas Taleb</p>
 
 
-<div class="container foodbox1" >
+      </div><!-- /.col-lg-4 -->
 
+      <div class="col-lg-6">
+        <img class="img-circle" src="boy.png"  alt="Generic placeholder image" width="140" height="140">
+        <p style="margin-top: 12px; color:white;font-size:1.3em;">低碳水饮食坚持者路人甲</p>
 
-  <h3>Fresh Foods</h3>
-  <hr>
-<% @products.where(:category => "freshfood").first(4).each do |product| %>
-    <div class="food-item col-sm-4 col-md-3">
-      <%= link_to product_path(product) do %>
-      <div class="item-img" style="margin-left: 20px">
-        <% if product.photos.present? %>
-          <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-        <% if product.is_recommend %>
-         <div class="hot-log">Hot</div>
-        <% end %>
+      </div><!-- /.col-lg-4 -->
+  </div>
+
+<div class="jumbotron row " style="margin-left: -20px; margin-right: -20px; margin-top: 20px; height: 150px; opacity: 0.5">
+        <div class="col-lg-offset-1 col-lg-5">
+            <p>早就有实证证据表明，有人通过不吃碳水化合物，但不改变其总的食物摄入量的方法减了100磅！</p>
       </div>
 
-      <div>
-          <h5>
-              <p><%= product.title%></p>
-          </h5>
-
-          <a class="format" style="color: grey">Carbo level: <%= product.carbolevel%></a>
-
-          <div >
-              <p class="price-wrap" > RMB: <%= product.price%> </p>
-          </div>
+      <div class="col-lg-5">
+        <p>
+          原本只是为改善体质，治疗偏头痛而尝试低碳水化合物饮食。却意外的在6个月时间里掉了10斤体重。
+        </p>
       </div>
+  </div>
+</div>
 
-      <div class="btn-wrap", style="margin-bottom: 20px">
+<div class="col-lg-offset-1 col-lg-10">
+ <div class="row foodbox1" >
+   <div class="block" style="height: 70px; margin-top: -40px;  margin-left: -20px; margin-right: -20px; background-color:  ">
+      <h1 class="text-center" >Nut</h1>
+   </div>
+   <hr>
+<div class="col-lg-12" style="padding: 0px 40px">
+ <% @products.where(:category => "nut").first(4).each do |product| %>
+     <div class="food-item col-sm-4 col-md-3">
+       <%= link_to product_path(product) do %>
+       <div class="item-img" >
+         <% if product.photos.present? %>
+           <%= image_tag(product.photos[0].avatar.thumb.url) %>
+         <% else %>
+           <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+         <% end %>
+       </div>
+
+       <div>
+           <h5>
+               <p><%= product.title%></p>
+           </h5>
+
+           <a class="format" style="color: grey">Carbo level: <%= product.carbolevel%></a>
+
+           <div >
+               <p class="price-wrap" > RMB: <%= product.price%> </p>
+           </div>
+       </div>
+
+       <div class="btn-wrap", style="margin-bottom: 20px">
           <%= link_to("Add to Cart", add_to_cart_product_path(product), :method => :post, :class => "btn btn-info btn-sm")%>
-      </div>
-      <% end %>
-    </div>
-<% end %>
+       </div>
+       <% end %>
+     </div>
+ <% end %>
+ </div>
+</div>
+<div class= "container">
+   <%= link_to "More Nuts", products_path(:category => "nut"), class: "btn btn-default btn-block" %>
+</div>
+
+ <div class="row foodbox1" >
+   <div class="block" style="height: 70px; margin-top: -40px;  margin-left: -20px; margin-right: -20px; background-color:  ">
+      <h1 class="text-center" >Berry</h1>
+   </div>
+   <hr>
+<div class="col-lg-12" style="padding: 0px 40px">
+ <% @products.where(:category => "berry").first(4).each do |product| %>
+     <div class="food-item col-sm-4 col-md-3">
+       <%= link_to product_path(product) do %>
+       <div class="item-img" >
+         <% if product.photos.present? %>
+           <%= image_tag(product.photos[0].avatar.thumb.url) %>
+         <% else %>
+           <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+         <% end %>
+       </div>
+
+       <div>
+           <h5>
+               <p><%= product.title%></p>
+           </h5>
+
+           <a class="format" style="color: grey">Carbo level: <%= product.carbolevel%></a>
+
+           <div >
+               <p class="price-wrap" > RMB: <%= product.price%> </p>
+           </div>
+       </div>
+
+       <div class="btn-wrap", style="margin-bottom: 20px">
+          <%= link_to("Add to Cart", add_to_cart_product_path(product), :method => :post, :class => "btn btn-info btn-sm")%>
+       </div>
+       <% end %>
+     </div>
+ <% end %>
+ </div>
+</div>
+<div class= "container">
+    <%= link_to "More Berries", products_path(:category => "berry"), class: "btn btn-default btn-block" %>
+</div>
+
+
+
+ <div class="row foodbox1" >
+   <div class="block" style="height: 70px; margin-top: -40px;  margin-left: -20px; margin-right: -20px; background-color:  ">
+      <h1 class="text-center" >Fresh Food</h1>
+   </div>
+   <hr>
+<div class="col-lg-12" style="padding: 0px 40px">
+ <% @products.where(:category => "freshfood").first(4).each do |product| %>
+     <div class="food-item col-sm-4 col-md-3">
+       <%= link_to product_path(product) do %>
+       <div class="item-img" >
+         <% if product.photos.present? %>
+           <%= image_tag(product.photos[0].avatar.thumb.url) %>
+         <% else %>
+           <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
+         <% end %>
+       </div>
+
+       <div>
+           <h5>
+               <p><%= product.title%></p>
+           </h5>
+
+           <a class="format" style="color: grey">Carbo level: <%= product.carbolevel%></a>
+
+           <div >
+               <p class="price-wrap" > RMB: <%= product.price%> </p>
+           </div>
+       </div>
+
+       <div class="btn-wrap", style="margin-bottom: 20px">
+          <%= link_to("Add to Cart", add_to_cart_product_path(product), :method => :post, :class => "btn btn-info btn-sm")%>
+       </div>
+       <% end %>
+     </div>
+ <% end %>
+ </div>
 </div>
 
 <div class= "container">
@@ -152,67 +280,24 @@ body {
 </div>
 
 
-<div class="container foodbox1" >
-
-
-  <h3>Berries</h3>
+<div class="row foodbox1" >
+  <div class="block" style="height: 70px; margin-top: -40px;  margin-left: -20px; margin-right: -20px; background-color:  ">
+     <h1 class="text-center" >Chocoloate</h1>
+  </div>
   <hr>
-<% @products.where(:category => "berry").first(4).each do |product| %>
-    <div class="food-item col-sm-4 col-md-3">
-      <%= link_to product_path(product) do %>
-      <div class="item-img" style="margin-left: 20px">
-        <% if product.photos.present? %>
-          <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-        <% if product.is_recommend %>
-         <div class="hot-log">Hot</div>
-        <% end %>
-      </div>
-
-      <div>
-          <h5>
-              <p><%= product.title%></p>
-          </h5>
-
-          <a class="format" style="color: grey">Carbo level: <%= product.carbolevel%></a>
-
-          <div >
-              <p class="price-wrap" > RMB: <%= product.price%> </p>
-          </div>
-      </div>
-
-      <div class="btn-wrap", style="margin-bottom: 20px">
-         <%= link_to("Add to Cart", add_to_cart_product_path(product), :method => :post, :class => "btn btn-info btn-sm")%>
-      </div>
-      <% end %>
-    </div>
-<% end %>
-</div>
-
-<div class= "container">
-    <%= link_to "More Berries", products_path(:category => "berry"), class: "btn btn-default btn-block" %>
-</div>
-
-
-<div class="container foodbox1">
-
-
-  <h3>Chocolate</h3>
-  <hr>
+<div class="col-lg-12" style="padding: 0px 40px">
 <% @products.where(:category => "chocolate").first(4).each do |product| %>
     <div class="food-item col-sm-4 col-md-3">
       <%= link_to product_path(product) do %>
-      <div class="item-img" style="margin-left: 20px">
+      <div class="item-img" >
         <% if product.photos.present? %>
-          <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+          <%= image_tag(product.photos[0].avatar.thumb.url) %>
         <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+          <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
         <% end %>
-        <% if product.is_recommend %>
+        <!-- <% if product.is_recommend %>
          <div class="hot-log">Hot</div>
-        <% end %>
+        <% end %> -->
       </div>
 
       <div>
@@ -234,18 +319,21 @@ body {
     </div>
 <% end %>
 </div>
-
-<div class= "container">
+</div>
+<div class= "container" style="margin-bottom: 50px">
     <%= link_to "More Chocolate", products_path(:category => "chocolate"), class: "btn btn-default btn-block" %>
 </div>
+
+</div>
+
 <br>
 
-<div class="container-fluid">
+<!--<div class="container-fluid">
 
 		<a href="/"><img src="http://r.photo.store.qq.com/psb?/V11HDhVk157QRj/SGWMQkfBcFAnvPSKEbXfe2qcBpGz3i7cm9frPPrzSC0!/r/dFUBAAAAAAAA" width="75%" height="auto;" style="opacity:0.85";></a>
 
 </div>
-
+-->
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

@@ -30,9 +30,9 @@
     display: flex
 }
 
-.container-fluid,.secondary-header,.user-nav,.header-wrap .header,.content-wrap,.footer-wrap .footer {
-    max-width: 1440px
-}
+// .container-fluid,.secondary-header,.user-nav,.header-wrap .header,.content-wrap,.footer-wrap .footer {
+//     max-width: 1440px
+// }
 
 .primary-wrap .brand-link {
     display: block;
@@ -117,4 +117,11 @@
     .primary-wrap .search-wrap .header-search-el-wrap {
         margin-right: 0
     }
+}
+
+.fa-american-sign-language-interpreting {
+	float:right;
+	color: #f5f5f5;
+	padding:10px;
+	background: #52c722;
 }
