@@ -54,14 +54,17 @@ $(function(){
     <div style="height: 40px; font-size: 1.2em;color:#337ab7;">
       <span class="views"><i class="fa fa-eye fa-3" aria-hidden="true">  <%= @product.views %></i></span>
     </div>
-    <div style="height: 50px">
+    <div style="height: 40px">
       <h5>
     数量 : <%= @product.quantity %>
       <h5>
   </div>
 
-    <div style="height: 50px">
+    <div style="height: 70px">
       <h4>￥:<%= @product.price %></h4>
+      <% if @is_surprise %>
+        恭喜您今天此件商品获得了<strong>8折</strong>优惠<span style="color: red; font-size:2em;"><%= number_to_currency(@product.price*0.8, precision: 2, unit: "¥", separator: ",", delimiter: "") %></span>
+      <% end %>
     </div>
 
     <div class="pull-right" style="margin-top: 5px">
@@ -70,7 +73,6 @@ $(function(){
       <% else %>
           已售罄
       <% end %>
-
     </div>
 
   </div>
