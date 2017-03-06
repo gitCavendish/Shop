@@ -57,13 +57,14 @@ body {
     		<div class="tab">
     			<div class="paragraph-content">
     		        <a href="/"><img src="http://r.photo.store.qq.com/psb?/V11HDhVk157QRj/QspuAGsZBUX13doj4TGCE1kST*93HSfg3UQfK2C4Z34!/r/dGcBAAAAAAAA", width= "100%"></a>
+                <%= link_to surprise_products_path, method: :get do %>
+                  <div class="fa fa-american-sign-language-interpreting" style="font-size: 1.5em;float:right;" role="button">Suprise for you</div>
+                <% end %>
           </div>
         </div>
       </div>
     </div>
-
  <!--              第一行食品位置            -->
-
 
  <div class="container foodbox1" >
    <h3>Nuts</h3>
@@ -78,7 +79,7 @@ body {
            <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
          <% end %>
          <% if product.is_recommend %>
-          <div class="hot-log">Hot</div>
+            <div class="hot-log">Hot</div>
          <% end %>
        </div>
 

@@ -17,9 +17,9 @@ Rails.application.routes.draw do
         end
         collection do
             get :search
+            get :surprise
         end
         resources :comments
-
     end
 
     resources :carts do

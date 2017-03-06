@@ -13,6 +13,9 @@ class ProductsController < ApplicationController
           @product.increment
         end
         @photos = @product.photos.all
+        if params[:is_surprise].present?
+          @is_surprise = params[:is_surprise]
+        end
     end
 
     def add_to_cart
@@ -46,6 +49,22 @@ class ProductsController < ApplicationController
             @products = @products.where("carbolevel = ?", params[:s][:carbolevel])
           end
         end
+    end
+
+    def surprise
+      if !session.include?(:user_info) or DateTime.now.to_date != session[:user_info][1].to_date
+        @product = Product.order('RANDOM()').first
+        session.delete("user_info")
+        session[:user_info] = [current_user.id, DateTime.now.to_date, @product.id, 0.8]
+        redirect_to action: "show", id: @product.id, is_surprise: true
+      else
+        redirect_to(:back)
+        flash[:warning] = '等明天再来吧！good luck！'
+      end
+      # byebug ?
+      # session[:user_info] = [current_user.id, DateTime.now.to_date, @product.id, 0.8]
+      # @product = Product.order('RANDOM()').first
+      # redirect_to action: "show", id: @product.id, is_surprise: true
     end
 
     protected
