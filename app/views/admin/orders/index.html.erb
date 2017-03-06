@@ -5,7 +5,6 @@
   vertical-align: middle;
 }
 </style>
-<% if !@orders.blank?%>
 <table class="table table-bordered table-striped table-hover table-responsive">
   <thead id="orderTable" class="thead-default">
     <tr class="success" >
@@ -26,7 +25,3 @@
       <% end %>
     </tbody>
   </table>
-  <% else %>
-    <p style="line-height: 30px;font-size: 20px;">
-      您还没有订单信息，赶快去找您喜欢的商品吧~~</p>
-  <% end %>
