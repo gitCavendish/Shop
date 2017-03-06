@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, only: [:surprise]
   before_action :validate_search_key, only: [:search]
     def index
         @products = Product.order("updated_at DESC")
