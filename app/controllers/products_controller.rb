@@ -9,7 +9,9 @@ class ProductsController < ApplicationController
 
     def show
         @product = Product.find(params[:id])
-        @product.increment
+        if !current_user.is_admin?
+          @product.increment
+        end
         @photos = @product.photos.all
     end
 
