@@ -1,5 +1,6 @@
 <h2>订单列表 </h2>
 
+<% if !@orders.blank?%>
 <table class="table table-bordered">
   <thead>
     <tr>
@@ -10,7 +11,6 @@
     </tr>
   </thead>
   <tbody>
-
     <% @orders.each do |order| %>
     <tr>
       <td> <%= link_to(order.id, order_path(order.token)) %> </td>
@@ -19,6 +19,9 @@
       <td> <%= order.aasm_state%></td>
     </tr>
     <% end %>
-
   </tbody>
 </table>
+  <% else %>
+    <p style="line-height: 30px;font-size: 20px;">
+      您还没有订单信息，赶快去找您喜欢的商品吧~~</p>
+  <% end %>
