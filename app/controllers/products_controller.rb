@@ -58,13 +58,9 @@ class ProductsController < ApplicationController
         session[:user_info] = [current_user.id, DateTime.now.to_date, @product.id, 0.8]
         redirect_to action: "show", id: @product.id, is_surprise: true
       else
-        redirect_to(:back)
-        flash[:warning] = '等明天再来吧！good luck！'
+        redirect_to action: "show", id: session[:user_info][2], is_surprise: true
+        flash[:notice] = '欢迎来到您的惊喜～ 惊喜每天不同哦～～'
       end
-      # byebug ?
-      # session[:user_info] = [current_user.id, DateTime.now.to_date, @product.id, 0.8]
-      # @product = Product.order('RANDOM()').first
-      # redirect_to action: "show", id: @product.id, is_surprise: true
     end
 
     protected
