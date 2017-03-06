@@ -4,7 +4,7 @@
     padding-top: 20px;
     margin-top: 10px;
     margin-bottom: 10px;
-    padding-left: 10px;
+
     background-color: rgb(253, 253, 253);
 
 }
@@ -16,7 +16,7 @@
 body {
 
     text-align: center;
-    background-color: rgb(255, 250, 251);
+
 }
 
 .center {
@@ -31,6 +31,23 @@ body {
 
 
 }
+
+.bg1{
+     background-image: url("bg2.jpg")
+
+}
+
+.bg2{
+     background-image: url("bg6.png")
+
+}
+
+.bg3{
+     background-image: url("cart1.jpg")
+
+
+}
+
 </style>
 
 
@@ -58,58 +75,102 @@ body {
 <div class="row">
   <%= render "products/search_bar" %>
 </div>
-    <div class="block " style="margin-left: -20px; margin-right: -20px;">
+
+    <div class="block " style="margin-left: -20px; margin-right: -20px; ">
     			<div class="paragraph-content">
-    		        <a href="/"><img src="http://r.photo.store.qq.com/psb?/V11HDhVk157QRj/QspuAGsZBUX13doj4TGCE1kST*93HSfg3UQfK2C4Z34!/r/dGcBAAAAAAAA", width= "100%"></a>
+    		        <a href="/"><img src="http://r.photo.store.qq.com/psb?/V11HDhVk157QRj/QspuAGsZBUX13doj4TGCE1kST*93HSfg3UQfK2C4Z34!/r/dGcBAAAAAAAA", height= "110%", width= "100%"></a>
       </div>
     </div>
 
  <!--              第一行食品位置            -->
+<div class="bg1" style="margin-top: -20px; margin-left: -20px; margin-right: -20px; padding-top:80px; padding-bottom: 12px; padding-left:50px; padding-right:50px">
 
-<div class="jumbotron row" style="margin-left: -20px; margin-right: -20px;">
-  <div class="col-lg-4">
-    <h2>省时省力省心(promise)</h2>
-    <p>xxxxxxxxxxxxxxxxxxxxx</p>
-</div>
 
-<div class="col-lg-4">
-  <h2>省时省力省心(promise)</h2>
-  <p>xxxxxxxxxxxxxxxxxxxxx</p>
-</div>
-
-<div class="col-lg-4">
-  <h2>省时省力省心(promise)</h2>
-  <p>xxxxxxxxxxxxxxxxxxxxx</p>
-</div>
-</div>
-
-<div class="row" style="background-color: grey; margin-top: -30px; padding: 40px; 40px">
+<div class="row" >
         <div class="col-lg-6">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           <h2>Prove</h2>
           <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+
         </div><!-- /.col-lg-4 -->
 
         <div class="col-lg-6">
           <img class="img-circle" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" width="140" height="140">
           <h2>Prove</h2>
           <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details »</a></p>
+
         </div><!-- /.col-lg-4 -->
+</div>
+
+<div class="jumbotron row " style="margin-left: -20px; margin-right: -20px; margin-top: 20px; height: 300px">
+        <div class="col-lg-4">
+          <h2>省时省力省心(promise)</h2>
+          <p>xxxxxxxxxxxxxxxxxxxxx</p>
       </div>
 
- <div class="container foodbox1" >
-   <h3>Nuts</h3>
+      <div class="col-lg-4">
+        <h2>省时省力省心(promise)</h2>
+        <p>xxxxxxxxxxxxxxxxxxxxx</p>
+      </div>
+
+      <div class="col-lg-4">
+        <h2>省时省力省心(promise)</h2>
+        <p>xxxxxxxxxxxxxxxxxxxxx</p>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <div class="row foodbox1" >
+
+   <div class="block" style="height: 70px; margin-top: -40px;  margin-left: -20px; margin-right: -20px; background-color:  ">
+      <h1 class="text-center" >Hotest!</h1>
+   </div>
    <hr>
+   <div class="col-lg-2">
+    <ul class="nav sidenav nav-stacked">
+   <li class="active"><a href="#">Home</a></li>
+   <li><a href="#">坚果类</a></li>
+   <li><a href="#">浆果类</a></li>
+   <li><a href="#">生鲜类</a></li>
+   <li><a href="#">巧克力</a></li>
+   <hr>
+   <li><a href="#">Carbolevel: 0-10%</a></li>
+   <li><a href="#">Carbolevel: 10-20%</a></li>
+   <li><a href="#">Carbolevel: 20-30%</a></li>
+   <hr>
+   <li><a href="#">What is low carbohydrate foods?</a></li>
+
+    </ul>
+   </div>
+<div class="col-lg-10" style="padding: 0px 40px">
  <% @products.where(:category => "nut").each do |product| %>
      <div class="food-item col-sm-4 col-md-3">
        <%= link_to product_path(product) do %>
-       <div class="item-img" style="margin-left: 20px">
+       <div class="item-img" >
          <% if product.photos.present? %>
-           <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
+           <%= image_tag(product.photos[0].avatar.thumb.url) %>
          <% else %>
-           <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
+           <%= image_tag("http://placehold.it/200x200&text=No Pic") %>
          <% end %>
        </div>
 
@@ -132,141 +193,29 @@ body {
      </div>
  <% end %>
  </div>
-
- <div class= "container">
-     <%= link_to "More Nuts", products_path(:category => "nut"), class: "btn btn-default btn-block" %>
- </div>
-
-
-<div class="container foodbox1" >
-
-
-  <h3>Fresh Foods</h3>
-  <hr>
-<% @products.where(:category => "freshfood").each do |product| %>
-    <div class="food-item col-sm-4 col-md-3">
-      <%= link_to product_path(product) do %>
-      <div class="item-img" style="margin-left: 20px">
-        <% if product.photos.present? %>
-          <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-      </div>
-
-      <div>
-          <h5>
-              <p><%= product.title%></p>
-          </h5>
-
-          <a class="format" style="color: grey">Carbo level: <%= product.carbolevel%></a>
-
-          <div >
-              <p class="price-wrap" > RMB: <%= product.price%> </p>
-          </div>
-      </div>
-
-      <div class="btn-wrap", style="margin-bottom: 20px">
-          <%= link_to("Add to Cart", add_to_cart_product_path(product), :method => :post, :class => "btn btn-info btn-sm")%>
-      </div>
-      <% end %>
-    </div>
-<% end %>
-</div>
-
-<div class= "container">
-    <%= link_to "More Fresh foods", products_path(:category => "freshfood"), class: "btn btn-default btn-block" %>
 </div>
 
 
-<div class="container foodbox1" >
+<div class="block " style="margin-left: -20px; margin-right: -20px; margin-bottom: -30px ">
 
-
-  <h3>Berries</h3>
-  <hr>
-<% @products.where(:category => "berry").first(4).each do |product| %>
-    <div class="food-item col-sm-4 col-md-3">
-      <%= link_to product_path(product) do %>
-      <div class="item-img" style="margin-left: 20px">
-        <% if product.photos.present? %>
-          <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
+      <div class="paragraph-content">
+            <a href="/"><img src="http://r.photo.store.qq.com/psb?/V11HDhVk157QRj/ggVjf4B2o*1YCjd5N3svKKcIIoAcsGVD*8BpFyF7xN8!/r/dGgBAAAAAAAA", height= "100%", width= "100%"></a>
       </div>
-
-      <div>
-          <h5>
-              <p><%= product.title%></p>
-          </h5>
-
-          <a class="format" style="color: grey">Carbo level: <%= product.carbolevel%></a>
-
-          <div >
-              <p class="price-wrap" > RMB: <%= product.price%> </p>
-          </div>
-      </div>
-
-      <div class="btn-wrap", style="margin-bottom: 20px">
-         <%= link_to("Add to Cart", add_to_cart_product_path(product), :method => :post, :class => "btn btn-info btn-sm")%>
-      </div>
-      <% end %>
-    </div>
-<% end %>
-</div>
-
-<div class= "container">
-    <%= link_to "More Berries", products_path(:category => "berry"), class: "btn btn-default btn-block" %>
+      <btn class="btn btn-lg btn-info">
+        <a herf="/">Buy Some Heath Now! </a>
+      </btn>
 </div>
 
 
-<div class="container foodbox1">
 
-
-  <h3>Chocolate</h3>
-  <hr>
-<% @products.where(:category => "chocolate").first(4).each do |product| %>
-    <div class="food-item col-sm-4 col-md-3">
-      <%= link_to product_path(product) do %>
-      <div class="item-img" style="margin-left: 20px">
-        <% if product.photos.present? %>
-          <%= image_tag(product.photos[0].avatar.thumb.url, class: "thumbnail") %>
-        <% else %>
-          <%= image_tag("http://placehold.it/200x200&text=No Pic", class: "thumbnail") %>
-        <% end %>
-      </div>
-
-      <div>
-          <h5>
-              <p><%= product.title%></p>
-          </h5>
-
-          <a class="format" style="color: grey">Carbo level: <%= product.carbolevel%></a>
-
-          <div >
-              <p class="price-wrap" > RMB: <%= product.price%> </p>
-          </div>
-      </div>
-
-      <div class="btn-wrap", style="margin-bottom: 20px">
-         <%= link_to("Add to Cart", add_to_cart_product_path(product), :method => :post, :class => "btn btn-info btn-sm")%>
-      </div>
-      <% end %>
-    </div>
-<% end %>
-</div>
-
-<div class= "container">
-    <%= link_to "More Chocolate", products_path(:category => "chocolate"), class: "btn btn-default btn-block" %>
-</div>
 <br>
 
-<div class="container-fluid">
+<!--<div class="container-fluid">
 
 		<a href="/"><img src="http://r.photo.store.qq.com/psb?/V11HDhVk157QRj/SGWMQkfBcFAnvPSKEbXfe2qcBpGz3i7cm9frPPrzSC0!/r/dFUBAAAAAAAA" width="75%" height="auto;" style="opacity:0.85";></a>
 
 </div>
-
+-->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
