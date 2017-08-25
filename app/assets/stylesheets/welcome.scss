@@ -27,9 +27,6 @@
     display: flex
 }
 
-// .container-fluid,.secondary-header,.user-nav,.header-wrap .header,.content-wrap,.footer-wrap .footer {
-//     max-width: 1440px
-// }
 
 .primary-wrap .brand-link {
     display: block;
@@ -150,7 +147,7 @@
 }
 
 .bg1{
-     background-image: url("/bg2.jpg");
+     background-color: rgb(110, 171, 255);
      padding-top: 80px;
      background-repeat: no-repeat;
      background-position: center;

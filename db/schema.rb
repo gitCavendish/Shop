@@ -13,9 +13,9 @@
 ActiveRecord::Schema.define(version: 20170305114926) do
 
   create_table "cart_items", force: :cascade do |t|
-    t.integer  "cart_id"
-    t.integer  "product_id"
-    t.integer  "quantity"
+    t.integer "cart_id"
+    t.integer "product_id"
+    t.integer "quantity"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -26,85 +26,85 @@ ActiveRecord::Schema.define(version: 20170305114926) do
   end
 
   create_table "comments", force: :cascade do |t|
-    t.text     "content"
-    t.integer  "user_id"
-    t.integer  "product_id"
+    t.text "content"
+    t.integer "user_id"
+    t.integer "product_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "locations", force: :cascade do |t|
-    t.string   "address"
-    t.float    "latitude"
-    t.float    "longitude"
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "orders", force: :cascade do |t|
-    t.integer  "total"
-    t.integer  "user_id"
-    t.string   "billing_name"
-    t.string   "billing_address"
-    t.string   "shipping_name"
-    t.string   "shipping_address"
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
-    t.string   "token"
-    t.boolean  "is_paid",          default: false
-    t.string   "payment_method"
-    t.string   "aasm_state",       default: "order_placed"
-    t.string   "phone_number"
+    t.integer "total"
+    t.integer "user_id"
+    t.string "billing_name"
+    t.string "billing_address"
+    t.string "shipping_name"
+    t.string "shipping_address"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "token"
+    t.boolean "is_paid", default: false
+    t.string "payment_method"
+    t.string "aasm_state", default: "order_placed"
+    t.string "phone_number"
     t.index ["aasm_state"], name: "index_orders_on_aasm_state"
   end
 
   create_table "photos", force: :cascade do |t|
-    t.integer  "product_id"
-    t.string   "avatar"
+    t.integer "product_id"
+    t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "product_lists", force: :cascade do |t|
-    t.integer  "order_id"
-    t.string   "product_name"
-    t.integer  "product_price"
-    t.integer  "quantity"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.integer "order_id"
+    t.string "product_name"
+    t.integer "product_price"
+    t.integer "quantity"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "products", force: :cascade do |t|
-    t.string   "title"
-    t.text     "description"
-    t.integer  "quantity"
-    t.integer  "price"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.string   "image"
-    t.string   "category"
-    t.boolean  "is_hidden"
-    t.boolean  "is_recommend"
-    t.string   "carbolevel"
-    t.integer  "location_id"
-    t.integer  "views"
+    t.string "title"
+    t.text "description"
+    t.integer "quantity"
+    t.integer "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "image"
+    t.string "category"
+    t.boolean "is_hidden"
+    t.boolean "is_recommend"
+    t.string "carbolevel"
+    t.integer "location_id"
+    t.integer "views"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: "",    null: false
-    t.string   "reset_password_token"
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,     null: false
+    t.integer "sign_in_count", default: 0, null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.boolean  "is_admin",               default: false
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "is_admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
