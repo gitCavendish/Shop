@@ -1,6 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-      @products = Product.order("id DESC")
       @recomments = Product.where(:is_recommend => true).first(8)
       @nuts = Product.where(:category => "nut").first(4)
       @berries = Product.where(:category => "berry").first(4)
