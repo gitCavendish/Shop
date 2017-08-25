@@ -1,0 +1,55 @@
+<div class="row foodbox1" >
+  <hr>
+   <%= render "products_item", object: @recomments %>
+</div>
+
+<%= render "mid-brand"%>
+
+<div class="col-lg-offset-1 col-lg-10">
+ <div class="row foodbox1" >
+   <div class="cate-brand">
+      <h1 class="text-center" >Nut</h1>
+   </div>
+   <hr>
+   <%= render "products_item", object: @nuts %>
+</div>
+
+<div class= "container">
+   <%= link_to "More Nuts", products_path(:category => "nut"), class: "btn btn-default btn-block" %>
+</div>
+
+ <div class="row foodbox1" >
+   <div class="cate-brand">
+      <h1 class="text-center" >Berry</h1>
+   </div>
+   <hr>
+   <%= render "products_item", object: @berries %>
+</div>
+<div class= "container">
+    <%= link_to "More Berries", products_path(:category => "berry"), class: "btn btn-default btn-block" %>
+</div>
+
+ <div class="row foodbox1" >
+   <div class="cate-brand">
+      <h1 class="text-center" >Fresh Food</h1>
+   </div>
+   <hr>
+   <%= render "products_item", object: @freshfood %>
+</div>
+
+<div class= "container">
+    <%= link_to "More Fresh foods", products_path(:category => "freshfood"), class: "btn btn-default btn-block" %>
+</div>
+
+<div class="row foodbox1" >
+  <div class="cate-brand">
+     <h1 class="text-center" >Chocoloate</h1>
+  </div>
+  <hr>
+  <%= render "products_item", object: @chocolate %>
+</div>
+<div class= "container" style="margin-bottom: 50px">
+    <%= link_to "More Chocolate", products_path(:category => "chocolate"), class: "btn btn-default btn-block" %>
+</div>
+
+</div>
