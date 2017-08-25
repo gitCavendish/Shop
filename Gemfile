@@ -42,6 +42,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'figaro'
 gem 'fog'
+gem 'awesome_rails_console'
 
 gem 'letter_opener', group: :development
 
