@@ -4,7 +4,6 @@ class Product < ApplicationRecord
   has_many :comments
   accepts_nested_attributes_for :photos
 
-  belongs_to :location
 
   def increment(by = 1)
     self.views ||= 0

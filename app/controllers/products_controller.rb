@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
             flash[:warning] = '购物车内已存在该商品'
         end
 
-        redirect_to :back
+        redirect_back(fallback_location: root_url)
     end
 
     def search

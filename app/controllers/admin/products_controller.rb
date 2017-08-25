@@ -19,7 +19,6 @@ class Admin::ProductsController < ApplicationController
           @photo = @product.photos.create(:avatar => a)
         end
       end
-
       redirect_to admin_products_path
     else
       render :new
