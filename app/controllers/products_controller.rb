@@ -6,11 +6,12 @@ class ProductsController < ApplicationController
         if params[:category].present?
           @products = @products.where(:category => params[:category])
         end
+        expires_in 3.months, :public => true
     end
 
     def show
         @product = Product.find(params[:id])
-        
+
           @product.increment
 
         @photos = @product.photos.all

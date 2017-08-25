@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
   def index
-      @products = Product.order("updated_at DESC")
+      @products = Product.order("id DESC")
+      expires_in 3.months, :public => true
   end
 
   def show
@@ -9,5 +10,5 @@ class WelcomeController < ApplicationController
 
   def about
   end
-  
+
 end
